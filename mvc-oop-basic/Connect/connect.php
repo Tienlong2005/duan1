@@ -20,6 +20,3 @@ class Connect {
     }
 }
 ?>
-
-
-//Kết nối với CSDL

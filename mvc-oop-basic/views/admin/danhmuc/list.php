@@ -24,7 +24,7 @@
                                 <div class="row g-4">
                                     <div class="col-sm-auto">
                                         <div>
-                                            <a href="apps-ecommerce-add-product.html" class="btn btn-secondary" id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Thêm Sản Phẩm</a>
+                                            <a href="index.php?act=them-danh-muc" class="btn btn-secondary" id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Thêm Sản Phẩm</a>
                                         </div>
                                     </div>
                                     <div class="col-sm">
@@ -65,18 +65,18 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">Id</th>
-                                                                        <th scope="col">Invoice</th>
-                                                                        <th scope="col">Amount</th>
-                                                                        <th scope="col">Date</th>
-                                                                        <th scope="col">Status</th>
-                                                                        <th scope="col">Action</th>
+                                                                        <th scope="col">Tên Danh Mục</th>
+                                                                        <th scope="col">Mô tả</th>
+                                                                        
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
+                                                                    <?php foreach ($listDanhMuc as $dm):?>
                                                                     <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>Basic Plan</td>
-                                                                        <td>$860</td>
+                                                                    <td><?=$dm['id']?></td>
+                                                                    <td><?=$dm['ten_danh_muc']?></td>
+                                                                    <td><?=$dm['mo_ta']?></td>
+                                                                       
                                                                         <td>Nov 22, 2021</td>
                                                                         <td><i class="ri-checkbox-circle-line align-middle text-success"></i></td>
                                                                         <td>
@@ -84,7 +84,7 @@
                                                                                 <button type="submit" class="btn btn-primary w-sm btn-smaller">Quay lại</button>
                                                                                 <button type="submit" class="btn btn-secondary w-sm btn-smaller">Cập Nhật</button>
                                                                                 <button type="submit" class="btn btn-danger w-sm btn-smaller">Xóa</button>
-
+ <?php endforeach ?>
                                                                             </div>
                                                                         </td>
                                                                     </tr>

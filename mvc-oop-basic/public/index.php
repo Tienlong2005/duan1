@@ -1,6 +1,8 @@
 <?php
+session_start();
+require_once '../controllers/admin/DanhMucAdminController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : '';
-
+$DanhmucAdmin = new DanhMucAdminController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
@@ -14,13 +16,14 @@ switch ($action) {
         case 'product-edit':
         include '../views/admin/product/edit.php';
         break;
-    case 'category':
-        include '../views/admin/category/list.php';
+    case 'danh-muc':
+        $DanhmucAdmin->index();
         break;
-    case 'category-create':
-        include '../views/admin/category/create.php';
+    case 'them-danh-muc':
+        $DanhmucAdmin->createDanhMuc();
+        
         break;
-    case 'category-edit':
-        include '../views/admin/category/edit.php';
+    case 'edit-danh-muc':
+        $DanhmucAdmin->updateDanhMuc();
         break;
 }

@@ -39,6 +39,9 @@
                                                     <label class="form-label">Tên Danh Mục</label>
                                                     <input type="text" class="form-control" id="danh_muc" placeholder="Nhập tên danh mục">
                                                 </div>
+                                                <?php if(isset($_SESSION['errors']['ten_danh_muc'])): ?>
+                                                    <p class="text-danger"><?= $_SESSION['errors']['ten_danh_muc'] ?> </p>
+                                                    <?php endif; ?>
                                             </div>
 
                                             <div class="col-lg-6">
@@ -60,6 +63,9 @@
                                                     <label class="form-label">Mô tả</label>
                                                     <textarea class="form-control" id="manufacturer-brand-input" placeholder="Nhập mô tả" rows="4"></textarea>
                                                 </div>
+                                                <?php if(isset($_SESSION['errors']['mo_ta'])): ?>
+                                                    <p class="text-danger"><?= $_SESSION['errors']['mo_ta'] ?> </p>
+                                                    <?php endif ; ?>
                                             </div>
                                         </div>
                                         <!-- end row -->
