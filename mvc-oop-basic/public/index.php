@@ -24,6 +24,6 @@ switch ($action) {
         
         break;
     case 'edit-danh-muc':
-        $DanhmucAdmin->updateDanhMuc();
+        
         break;
 }
