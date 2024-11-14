@@ -23,6 +23,7 @@ switch ($action) {
         $DanhmucAdmin->createDanhMuc();
         
         break;
+    
     case 'edit-danh-muc':
         
         break;

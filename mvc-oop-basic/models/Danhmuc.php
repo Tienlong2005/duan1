@@ -14,6 +14,5 @@ require_once '../Connect/connect.php';
     return $stmt -> execute([$ten_danh_muc,  $mo_ta]);
     
  }
-
  
 }

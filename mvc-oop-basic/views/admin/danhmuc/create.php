@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div class="text-end mb-3">
-                            <button type="button" class="btn btn-primary w-sm" onclick="window.history.back()">Quay lại</button>
+                            <a href="index.php?act=danh-muc"  class="btn btn-primary w-sm" onclick="window.history.back()">Quay lại</a>
                             <button type="submit" class="btn btn-secondary w-sm" name="them-danh-muc">Thêm mới</button>
                         </div>
                     </div>

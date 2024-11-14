@@ -82,8 +82,11 @@
                                                                         <td>
                                                                             <div class="form-check form-switch">
                                                                                 <button type="submit" class="btn btn-primary w-sm btn-smaller">Quay lại</button>
-                                                                                <button type="submit" class="btn btn-secondary w-sm btn-smaller">Cập Nhật</button>
-                                                                                <button type="submit" class="btn btn-danger w-sm btn-smaller">Xóa</button>
+                                                                                <a href="index.php?act=edit-danh-muc&id=<?= $dm['id'] ?>" class="btn btn-secondary w-sm btn-smaller">Cập Nhật</a>
+
+                                                                                <a href="index.php?act=xoa-danh-muc&id=<?= $dm['id'] ?>" class="btn btn-secondary w-sm btn-smaller" 
+                                                                                 onclick="return confirm('Bạn có chắc chắn muốn xóa danh mục này không?');">Xóa</a>
+
  <?php endforeach ?>
                                                                             </div>
                                                                         </td>
