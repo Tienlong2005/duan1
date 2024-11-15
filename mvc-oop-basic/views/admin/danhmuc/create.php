@@ -42,9 +42,7 @@
                                                     <label class="form-label">Mô tả</label>
                                                     <textarea class="form-control" name="mo_ta" placeholder="Nhập mô tả" rows="4" required></textarea>
                                                 </div>
-                                                <?php if(isset($_SESSION['errors']['mo_ta'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['mo_ta'] ?></p>
-                                                <?php endif; ?>
+                                              
                                             </div>
                                         </div>
                                     </div>

@@ -11,9 +11,7 @@ public function createDanhMuc() {
     if(empty($_POST['ten_danh_muc'])){
         $errors['ten_danh_muc'] = 'Không được để trống trường này';
     } 
-    if(empty($_POST['mo_ta'])){
-        $errors['mo_ta'] = 'Không được để trống trường này';
-    }
+    
     if(empty($errors)){
         $addDanhMuc = $this-> addDanhMuc($_POST['ten_danh_muc'], $_POST['mo_ta']);
         if($addDanhMuc){
