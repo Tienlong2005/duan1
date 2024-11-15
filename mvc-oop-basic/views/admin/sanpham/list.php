@@ -16,7 +16,7 @@
 
             <div class="row">
                 <!-- end col -->
-                 <form action="index.php?act=them-san-pham" method="post">
+                 <form>
                 <div class="col-xl-12 col-lg-8">
                     <div>
                         <div class="card">
@@ -83,13 +83,20 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <th scope="row">1</th>
-                                                                        <td>Basic Plan</td>
-                                                                        <td>$860</td>
-                                                                        <td>Nov 22, 2021</td>
-                                                                        <td>Ẩn</td>
+                                                                        <td>Giày bóng đá puma</td>
+                                                                        <td>2000000</td>
+                                                                        <td>1500000</td>
+                                                                        <td>tạm thời chưa có</td>
+                                                                        <td>45</td>
+                                                                        <td>đỏ-đen</td>
+                                                                        <td>20</td>
+                                                                        <td>13-08-2024</td>
+                                                                        <td>Giày bóng đá adidas</td>
+                                                                        <td>Giày bóng đá </td>
+                                                                        <td>Còn Hàng</td>
                                                                         <td>
                                                                             <div class="form-check form-switch">
-                                                                                <button type="submit" class="btn btn-primary"><i class="ri-eye-fill"></i></button>
+                                                                               
                                                                                 <button type="submit" class="btn btn-secondary"><i class="ri-refresh-line"></i></button>
                                                                                 <button type="submit" class="btn btn-danger"><i class="ri-delete-bin-line"></i></button>
                                                                             </div>

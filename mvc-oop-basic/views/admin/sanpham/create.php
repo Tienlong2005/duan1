@@ -150,7 +150,7 @@
                         </div>
                         <!-- end card -->
                         <div class="text-end mb-3">
-                            <button type="submit" class="btn btn-primary w-sm">Quay lại</button>
+                            <a href="index.php?act=san-pham" class="btn btn-primary w-sm">Quay lại</a>
                             <button type="submit" class="btn btn-secondary w-sm">Thêm mới</button>
                         </div>
                     </div>
