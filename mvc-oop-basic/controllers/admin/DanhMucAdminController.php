@@ -29,5 +29,16 @@ public function createDanhMuc() {
         } 
     include '../views/admin/danhmuc/create.php';   
 }
+public function deleteDanhMuc($id)
+    {
+        try {
+            $this->delete($id); // gọi phương thức delete từ model
+            $_SESSION['success'] = 'Xóa danh mục thành công';
+        } catch (\Throwable $th) {
+            $_SESSION['errors'] = 'Xóa danh mục thất bại';
+        }
+        header('Location: index.php?act=danh-muc');
+        exit();
+    }
    
 }

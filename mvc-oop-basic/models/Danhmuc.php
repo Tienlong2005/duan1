@@ -14,5 +14,11 @@ require_once '../Connect/connect.php';
     return $stmt -> execute([$ten_danh_muc,  $mo_ta]);
     
  }
+ public function delete($id)
+  {
+    $sql = 'DELETE FROM danh_mucs WHERE id = ?';
+    $stmt = $this->connect()->prepare($sql);
+    return $stmt->execute([$id]);
+  }
  
 }

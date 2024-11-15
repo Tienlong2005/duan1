@@ -1,6 +1,5 @@
 <?php include '../views/admin/layout/header.php' ?>
 <div class="main-content">
-
     <div class="page-content">
         <div class="container-fluid">
 
@@ -15,35 +14,19 @@
             <!-- end page title -->
 
             <div class="row">
-                <!-- end col -->
-
                 <div class="col-xl-12 col-lg-8">
                     <div>
                         <div class="card">
                             <div class="card-header border-0">
                                 <div class="row g-4">
                                     <div class="col-sm-auto">
-                                        <div>
-                                            <a href="index.php?act=them-danh-muc" class="btn btn-secondary" id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Thêm Sản Phẩm</a>
-                                        </div>
+                                        <a href="index.php?act=them-danh-muc" class="btn btn-primary" id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Thêm Danh Mục</a>
                                     </div>
                                     <div class="col-sm">
                                         <div class="d-flex justify-content-sm-end">
                                             <div class="search-box ms-2">
-                                                <input type="text" class="form-control" id="searchProductList" placeholder="Search Products...">
+                                                <input type="text" class="form-control" id="searchProductList" placeholder="Search Categories...">
                                                 <i class="ri-search-line search-icon"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-header">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <div id="selection-element">
-                                            <div class="my-n1 d-flex align-items-center text-muted">
-                                                Select <div id="select-content" class="text-body fw-semibold px-1"></div> Result <button type="button" class="btn btn-link link-danger p-0 ms-3" data-bs-toggle="modal" data-bs-target="#removeItemModal">Remove</button>
                                             </div>
                                         </div>
                                     </div>
@@ -51,7 +34,6 @@
                             </div>
                             <!-- end card header -->
                             <div class="card-body">
-
                                 <div class="tab-content text-muted">
                                     <div class="tab-pane active" id="productnav-all" role="tabpanel">
                                         <div id="table-product-list-all" class="table-card gridjs-border-none">
@@ -59,38 +41,29 @@
                                                 <div class="gridjs-wrapper" style="height: auto;">
                                                     <table role="grid" class="gridjs-table" style="height: auto;">
                                                         <tbody class="gridjs-tbody">
-
-
                                                             <table class="table table-hover table-striped align-middle table-nowrap mb-0">
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">Id</th>
                                                                         <th scope="col">Tên Danh Mục</th>
-                                                                        <th scope="col">Mô tả</th>
-                                                                        
+                                                                        <th scope="col">Mô Tả</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <?php foreach ($listDanhMuc as $dm):?>
-                                                                    <tr>
-                                                                    <td><?=$dm['id']?></td>
-                                                                    <td><?=$dm['ten_danh_muc']?></td>
-                                                                    <td><?=$dm['mo_ta']?></td>
-                                                                       
-                                                                        <td>Nov 22, 2021</td>
-                                                                        <td><i class="ri-checkbox-circle-line align-middle text-success"></i></td>
-                                                                        <td>
-                                                                            <div class="form-check form-switch">
-                                                                                <button type="submit" class="btn btn-primary w-sm btn-smaller">Quay lại</button>
-                                                                                <a href="index.php?act=edit-danh-muc&id=<?= $dm['id'] ?>" class="btn btn-secondary w-sm btn-smaller">Cập Nhật</a>
+                                                                    <?php foreach ($listDanhMuc as $dm): ?>
+                                                                        <tr>
+                                                                            <td><?= $dm['id'] ?></td>
+                                                                            <td><?= $dm['ten_danh_muc'] ?></td>
+                                                                            <td><?= $dm['mo_ta'] ?></td>
+                                                                            <td>
+                                                                                <div class="form-check form-switch">
+                                                                                    <a href="index.php?act=edit-danh-muc&id=<?= $dm['id'] ?>" class="btn btn-primary"><i class="ri-settings-fill"></i></a>
+                                                                                    <a onclick="return confirm('Bạn có chắc muốn xóa?')" href="index.php?act=xoa-danh-muc&id=<?= $dm['id'] ?>" class="btn btn-danger"><i class="ri-delete-bin-line"></i></a>
+                                                                                </div>
+                                                                            </td>
 
-                                                                                <a href="index.php?act=xoa-danh-muc&id=<?= $dm['id'] ?>" class="btn btn-secondary w-sm btn-smaller" 
-                                                                                 onclick="return confirm('Bạn có chắc chắn muốn xóa danh mục này không?');">Xóa</a>
-
- <?php endforeach ?>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
+                                                                        </tr>
+                                                                    <?php endforeach ?>
                                                                 </tbody>
                                                             </table>
                                                         </tbody>
@@ -99,17 +72,20 @@
                                                 <div class="gridjs-footer">
                                                     <div class="gridjs-pagination">
                                                         <div role="status" aria-live="polite" class="gridjs-summary" title="Page 1 of 2">Showing <b>1</b> to <b>10</b> of <b>12</b> results</div>
-                                                        <div class="gridjs-pages"><button tabindex="0" role="button" disabled="" title="Previous" aria-label="Previous" class="">Previous</button><button tabindex="0" role="button" class="gridjs-currentPage" title="Page 1" aria-label="Page 1">1</button><button tabindex="0" role="button" class="" title="Page 2" aria-label="Page 2">2</button><button tabindex="0" role="button" title="Next" aria-label="Next" class="">Next</button></div>
+                                                        <div class="gridjs-pages">
+                                                            <button tabindex="0" role="button" disabled="" title="Previous" aria-label="Previous" class="">Previous</button>
+                                                            <button tabindex="0" role="button" class="gridjs-currentPage" title="Page 1" aria-label="Page 1">1</button>
+                                                            <button tabindex="0" role="button" class="" title="Page 2" aria-label="Page 2">2</button>
+                                                            <button tabindex="0" role="button" title="Next" aria-label="Next" class="">Next</button>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div id="gridjs-temp" class="gridjs-temp"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- end tab pane -->
                                 </div>
                                 <!-- end tab content -->
-
                             </div>
                             <!-- end card body -->
                         </div>
@@ -119,7 +95,6 @@
                 <!-- end col -->
             </div>
             <!-- end row -->
-
         </div>
         <!-- container-fluid -->
     </div>
