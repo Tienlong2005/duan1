@@ -1,20 +1,22 @@
 <?php
 session_start();
 require_once '../controllers/admin/DanhMucAdminController.php';
+require_once '../controllers/admin/SanPhamAdminController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : '';
 $DanhmucAdmin = new DanhMucAdminController();
+$SanphamAdmin = new SanPhamAdminController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
         break;
-    case 'product':
-        include '../views/admin/product/list.php';
+    case 'san-pham':
+        $SanphamAdmin->index();
         break;
-    case 'product-create':
-        include '../views/admin/product/create.php';
+    case 'them-san-pham':
+        $SanphamAdmin->createSanPham();
         break;
-    case 'product-edit':
-        include '../views/admin/product/edit.php';
+    case 'edit-san-pham':
+        include '../views/admin/sanpham/edit.php';
         break;
     case 'danh-muc':
         $DanhmucAdmin->index();

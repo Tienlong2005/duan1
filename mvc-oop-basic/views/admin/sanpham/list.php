@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Trang Danh Mục</h4>
+                        <h4 class="mb-sm-0">Danh sách sản phẩm</h4>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
 
             <div class="row">
                 <!-- end col -->
-
+                 <form action="index.php?act=them-san-pham" method="post">
                 <div class="col-xl-12 col-lg-8">
                     <div>
                         <div class="card">
@@ -24,7 +24,7 @@
                                 <div class="row g-4">
                                     <div class="col-sm-auto">
                                         <div>
-                                            <a href="apps-ecommerce-add-product.html" class="btn btn-secondary" id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Thêm Danh Mục</a>
+                                            <a href="index.php?act=them-san-pham" class="btn btn-secondary" id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Thêm sản phẩm </a>
                                         </div>
                                     </div>
                                     <div class="col-sm">
@@ -65,11 +65,19 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">Id</th>
-                                                                        <th scope="col">Invoice</th>
-                                                                        <th scope="col">Amount</th>
-                                                                        <th scope="col">Date</th>
-                                                                        <th scope="col">Status</th>
-                                                                        <th scope="col">Action</th>
+                                                                        <th scope="col">Tên sản phẩm </th>
+                                                                        <th scope="col">Giá sản phẩn </th>
+                                                                        <th scope="col">Giá khuyến mại</th>
+                                                                        <th scope="col">Hình ảnh</th>
+                                                                        <th scope="col">Kích thước</th>
+                                                                        <th scope="col">Màu sắc</th>
+                                                                        <th scope="col">Số lượng</th>
+                                                                        <th scope="col">Ngày nhập</th>
+                                                                        <th scope="col">Mô tả</th>
+                                                                        <th scope="col">Danh mục</th>
+                                                                        <th scope="col">Trạng thái</th>
+                                                                        <th scope="col">Thao Tác</th>
+
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -115,7 +123,7 @@
                 <!-- end col -->
             </div>
             <!-- end row -->
-
+            </form>
         </div>
         <!-- container-fluid -->
     </div>

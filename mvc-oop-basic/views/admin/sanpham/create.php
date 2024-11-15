@@ -50,9 +50,11 @@
                                                 <div class="mb-3">
                                                     <label class="form-label">Danh Mục</label>
                                                     <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Chọn Danh Mục</option>
-                                                        <option value="1">Ẩn</option>
-                                                        <option value="2">Hiện</option>
+                                                   
+                                                    <?php foreach ( $listDanhMuc as $dm):?>
+                                                        <option value="<?= $dm['id'] ?>"><?= $dm['ten_danh_muc'] ?></option>
+                                                        <?php endforeach ;?>
+                                                       
                                                     </select>
                                                 </div>
                                             </div>
@@ -85,18 +87,18 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Chọn Màu Sắc</option>
-                                                        <option value="1">Ẩn</option>
-                                                        <option value="2">Hiện</option>
+                                                    <?php foreach ( $listKichThuoc as $size):?>
+                                                        <option value="<?= $dm['id'] ?>"><?= $dm['ten_mau_sac'] ?></option>
+                                                        <?php endforeach ;?>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Chọn Kích Thước</option>
-                                                        <option value="1">Ẩn</option>
-                                                        <option value="2">Hiện</option>
+                                                    <?php foreach ( $listKichThuoc as $size):?>
+                                                        <option value="<?= $dm['id'] ?>"><?= $dm['ten_kich_thuoc'] ?></option>
+                                                        <?php endforeach ;?>
                                                     </select>
                                                 </div>
                                             </div>
