@@ -1,30 +1,25 @@
 <?php
 require_once '../Connect/connect.php';
    class SanPham extends connect {
-    public function getAllMauSac(){
-        $sql = 'SELECT *FROM mau_sacs';
+    public function listSanPham(){
+        $sql = 'SELECT *FROM san_phams';
         $stmt = $this->connect()->prepare($sql);
         $stmt ->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
     }
-    public function getAllKichThuoc(){
-        $sql = 'SELECT *FROM kich_thuocs';
+    public function addSanPham($ten_san_pham, $gia_san_pham , $gia_khuyen_mai,$hinh_anh,$so_luong ,$luot_xem , $ngay_nhap, $mo_ta, $danh_muc_id, $trang_thai){
+        $sql = "INSERT INTO san_phams(ten_san_pham, gia_san_pham, gia_khuyen_mai,hinh_anh ,so_luong, luot_xem,ngay_nhap ,mo_ta, danh_muc_id, trang_thai) values(? ,?,?,?,?,?,?,?,?,?)";
         $stmt = $this->connect()->prepare($sql);
-        $stmt ->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt -> execute([$ten_san_pham, $gia_san_pham , $gia_khuyen_mai,$hinh_anh,$so_luong ,$luot_xem , $ngay_nhap, $mo_ta, $danh_muc_id, $trang_thai]);
+            
     }
-    public function getAllDanhMuc(){
-        $sql = 'SELECT*FROM danh_mucs';
-        $stmt = $this->connect()->prepare($sql);
-        $stmt ->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    }
-    public function addSanPham( $ten_san_pham , $gia_san_pham , $gia_khuyen_mai , $hinh_anh ,$so_luong ,$ngay_nhap ,$danh_muc_id,$trang_thai ){
-     $sql = 'INSERT INTO san_phams(ten_san_pham , gia_san_pham , gia_khuyen_mai , hinh_anh, so_luong, ngay_nhap, danh_muc_id, trang_thai) VALUES(?,?,?,?,?,?,?,?)';
-     $stmt = $this->connect()->prepare($sql);
-      return $stmt->execute([$ten_san_pham , $gia_san_pham , $gia_khuyen_mai , $hinh_anh ,$so_luong ,$ngay_nhap ,$danh_muc_id,$trang_thai]);
-     
-    }
+    public function delete($id)
+  {
+    $sql = 'DELETE FROM danh_mucs WHERE id = ?';
+    $stmt = $this->connect()->prepare($sql);
+    return $stmt->execute([$id]);
+  }
+   
+   
    }
 ?>

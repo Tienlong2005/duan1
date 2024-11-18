@@ -69,8 +69,7 @@
                                                                         <th scope="col">Giá sản phẩn </th>
                                                                         <th scope="col">Giá khuyến mại</th>
                                                                         <th scope="col">Hình ảnh</th>
-                                                                        <th scope="col">Kích thước</th>
-                                                                        <th scope="col">Màu sắc</th>
+                                                                        
                                                                         <th scope="col">Số lượng</th>
                                                                         <th scope="col">Ngày nhập</th>
                                                                         <th scope="col">Mô tả</th>
@@ -81,28 +80,29 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
+                                                                <?php foreach($listSanPham as $sp) :?>
                                                                     <tr>
                                                                         <th scope="row">1</th>
-                                                                        <td>Giày bóng đá puma</td>
-                                                                        <td>2000000</td>
-                                                                        <td>1500000</td>
-                                                                        <td>tạm thời chưa có</td>
-                                                                        <td>45</td>
-                                                                        <td>đỏ-đen</td>
-                                                                        <td>20</td>
-                                                                        <td>13-08-2024</td>
-                                                                        <td>Giày bóng đá adidas</td>
-                                                                        <td>Giày bóng đá </td>
-                                                                        <td>Còn Hàng</td>
+                                                                        <td><?= $sp['id'];?></td>
+                                                                        <td><?= $sp['ten_san_pham'];?></td>
+                                                                        <td><?= $sp['gia_san_pham'];?></td>
+                                                                        <td><?= $sp['gia_khuyen_mai'];?></td>
+                                                                        td><img src="<?= $sp['hinh_anh']; ?>" alt="" width="100"></td>
+                                                                        <td><?= $sp['so_luong'];?></td>
+                                                                        <td><?= $sp['ngay_nhap'];?></td>
+                                                                        <td><?= $sp['danh_muc_id'];?></td>
+                                                                        <td><?= $sp['trang_thai'];?></td>
                                                                         <td>
                                                                             <div class="form-check form-switch">
                                                                                
                                                                                 <button type="submit" class="btn btn-secondary"><i class="ri-refresh-line"></i></button>
-                                                                                <button type="submit" class="btn btn-danger"><i class="ri-delete-bin-line"></i></button>
+                                                                                <a onclick="return confirm('Bạn có chắc muốn xóa?')" href="index.php?act=xoa-san-pham&id=<?= $sp['id']; ?>" class="btn btn-danger"><i class="ri-delete-bin-line"></i></a>
+
                                                                             </div>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
+                                                                <?php endforeach ;?>
                                                             </table>
                                                         </tbody>
                                                     </table>
@@ -135,5 +135,6 @@
         <!-- container-fluid -->
     </div>
     <!-- End Page-content -->
+  
 </div>
 <?php include '../views/admin/layout/footer.php' ?>

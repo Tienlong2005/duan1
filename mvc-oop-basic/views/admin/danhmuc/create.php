@@ -49,10 +49,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-end mb-3">
-                            <a href="index.php?act=danh-muc"  class="btn btn-primary w-sm" onclick="window.history.back()">Quay lại</a>
-                            <button type="submit" class="btn btn-secondary w-sm" name="them-danh-muc">Thêm mới</button>
-                        </div>
+                        div class="text-end mb-3">
+    <!-- Quay lại với xác nhận -->
+    <a href="index.php?act=san-pham" class="btn btn-primary w-sm" onclick="return confirm('Bạn chắc chắn muốn quay lại mà không lưu?');">Quay lại</a>
+    
+    <!-- Nút Thêm mới -->
+    <button type="submit" name="them-san-pham" class="btn btn-secondary w-sm">Thêm mới</button>
+</div>
                     </div>
                 </div>
             </form>
