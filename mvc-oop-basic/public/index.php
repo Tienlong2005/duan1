@@ -42,4 +42,7 @@ switch ($action) {
             header('Location: index.php?act=danh-muc');
         }
         break;
+    default:
+    
+    
 }

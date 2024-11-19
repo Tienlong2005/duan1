@@ -57,7 +57,7 @@
                                         <div id="table-product-list-all" class="table-card gridjs-border-none">
                                             <div role="complementary" class="gridjs gridjs-container" style="width: 100%;">
                                                 <div class="gridjs-wrapper" style="height: auto;">
-                                                    <table role="grid" class="gridjs-table" style="height: auto;">
+                                                   
                                                         <tbody class="gridjs-tbody">
 
 
@@ -69,7 +69,6 @@
                                                                         <th scope="col">Giá sản phẩn </th>
                                                                         <th scope="col">Giá khuyến mại</th>
                                                                         <th scope="col">Hình ảnh</th>
-                                                                        
                                                                         <th scope="col">Số lượng</th>
                                                                         <th scope="col">Ngày nhập</th>
                                                                         <th scope="col">Mô tả</th>
@@ -82,12 +81,13 @@
                                                                 <tbody>
                                                                 <?php foreach($listSanPham as $sp) :?>
                                                                     <tr>
-                                                                        <th scope="row">1</th>
+                                                                       
                                                                         <td><?= $sp['id'];?></td>
                                                                         <td><?= $sp['ten_san_pham'];?></td>
                                                                         <td><?= $sp['gia_san_pham'];?></td>
                                                                         <td><?= $sp['gia_khuyen_mai'];?></td>
-                                                                        td><img src="<?= $sp['hinh_anh']; ?>" alt="" width="100"></td>
+                                                                        <td><img src="./images/category<?= $sp['hinh_anh']; ?>" width="100"></td>
+
                                                                         <td><?= $sp['so_luong'];?></td>
                                                                         <td><?= $sp['ngay_nhap'];?></td>
                                                                         <td><?= $sp['danh_muc_id'];?></td>

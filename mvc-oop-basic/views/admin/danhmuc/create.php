@@ -9,6 +9,8 @@
                     </div>
                 </div>
             </div>
+            <div>
+            </div>
             <form id="createproduct-form" method="POST" autocomplete="off" class="needs-validation" novalidate="">
                 <div class="row">
                     <div class="col-lg-12">
@@ -49,12 +51,12 @@
                                 </div>
                             </div>
                         </div>
-                        div class="text-end mb-3">
+                        
     <!-- Quay lại với xác nhận -->
     <a href="index.php?act=san-pham" class="btn btn-primary w-sm" onclick="return confirm('Bạn chắc chắn muốn quay lại mà không lưu?');">Quay lại</a>
     
     <!-- Nút Thêm mới -->
-    <button type="submit" name="them-san-pham" class="btn btn-secondary w-sm">Thêm mới</button>
+    <button type="submit" name="them-danh-muc" class="btn btn-secondary w-sm">Thêm mới</button>
 </div>
                     </div>
                 </div>
