@@ -13,7 +13,12 @@ require_once '../Connect/connect.php';
         return $stmt -> execute([$ten_san_pham, $gia_san_pham , $gia_khuyen_mai,$hinh_anh,$so_luong ,  $ngay_nhap, $mo_ta, $danh_muc_id, $trang_thai]);
             
     }
-   
+    public function delete($id)
+  {
+    $sql = 'DELETE FROM san_phams WHERE id = ?';
+    $stmt = $this->connect()->prepare($sql);
+    return $stmt->execute([$id]);
+  }
    
    }
 ?>

@@ -91,6 +91,7 @@
                                                                         <td><?= $sp['so_luong'];?></td>
                                                                         <td><?= $sp['ngay_nhap'];?></td>
                                                                         <td><?= $sp['danh_muc_id'];?></td>
+                                                                        <td><?= $sp['mo_ta'];?></td>
                                                                         <td><?= $sp['trang_thai'];?></td>
                                                                         <td>
                                                                             <div class="form-check form-switch">

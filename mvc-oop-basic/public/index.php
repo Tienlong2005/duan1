@@ -18,6 +18,14 @@ switch ($action) {
     case 'edit-san-pham':
         include '../views/admin/sanpham/edit.php';
         break;
+    case 'xoa-san-pham';
+    $id = isset($_GET['id']) ? $_GET['id'] : 0;
+    if ($id) {
+        $SanphamAdmin->deleteSanPham($id);
+    } else {
+        $_SESSION['errors'] = 'ID không hợp lệ';
+    }
+        break;
     case 'danh-muc':
         $DanhmucAdmin->index();
         break;

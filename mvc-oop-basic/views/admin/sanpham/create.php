@@ -116,10 +116,7 @@
                                                     <p class="text-danger"><?= $_SESSION['errors']['hinh_anh'] ?></p>
                                                 <?php endif; ?>
                                                     </div>
-                                                </div>
-   
-                                                          
-                                                  
+                                                </div>             
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">

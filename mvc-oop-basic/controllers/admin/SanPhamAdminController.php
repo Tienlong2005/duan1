@@ -52,6 +52,17 @@ require_once '../models/SanPham.php';
         }
         include '../views/admin/sanpham/create.php';
     }
+    public function deleteSanPham($id)
+    {
+        try {
+            $this->delete($id); // gọi phương thức delete từ model
+            $_SESSION['success'] = 'Xóa sản phẩm thành công';
+        } catch (\Throwable $th) {
+            $_SESSION['errors'] = 'Xóa sản phẩm thất bại';
+        }
+        header('Location: index.php?act=san-pham');
+        exit();
+    }
    
     }
 ?>
