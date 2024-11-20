@@ -16,7 +16,13 @@ switch ($action) {
         $SanphamAdmin->createSanPham();
         break;
     case 'edit-san-pham':
-        include '../views/admin/sanpham/edit.php';
+        $id = isset($_GET['id']) ? $_GET['id'] : 0;
+        if ($id) {
+            $SanphamAdmin->suaSanPham($id); // Gọi phương thức sửa danh mục
+        } else {
+            $_SESSION['errors'] = 'ID không hợp lệ';
+            header('Location: index.php?act=san-pham');
+        }
         break;
     case 'xoa-san-pham';
     $id = isset($_GET['id']) ? $_GET['id'] : 0;

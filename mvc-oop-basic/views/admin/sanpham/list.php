@@ -71,8 +71,8 @@
                                                                         <th scope="col">Hình ảnh</th>
                                                                         <th scope="col">Số lượng</th>
                                                                         <th scope="col">Ngày nhập</th>
-                                                                        <th scope="col">Mô tả</th>
                                                                         <th scope="col">Danh mục</th>
+                                                                        <th scope="col">Mô tả</th>
                                                                         <th scope="col">Trạng thái</th>
                                                                         <th scope="col">Thao Tác</th>
 
@@ -87,7 +87,6 @@
                                                                         <td><?= $sp['gia_san_pham'];?></td>
                                                                         <td><?= $sp['gia_khuyen_mai'];?></td>
                                                                         <td><img src="./images/category<?= $sp['hinh_anh']; ?>" width="100"></td>
-
                                                                         <td><?= $sp['so_luong'];?></td>
                                                                         <td><?= $sp['ngay_nhap'];?></td>
                                                                         <td><?= $sp['danh_muc_id'];?></td>
@@ -96,7 +95,7 @@
                                                                         <td>
                                                                             <div class="form-check form-switch">
                                                                                
-                                                                                <button type="submit" class="btn btn-secondary"><i class="ri-refresh-line"></i></button>
+                                                                            <a href="index.php?act=edit-san-pham&id=<?= $sp['id'] ?>" class="btn btn-primary"><i class="ri-settings-fill"></i></a>
                                                                                 <a onclick="return confirm('Bạn có chắc muốn xóa?')" href="index.php?act=xoa-san-pham&id=<?= $sp['id']; ?>" class="btn btn-danger"><i class="ri-delete-bin-line"></i></a>
 
                                                                             </div>

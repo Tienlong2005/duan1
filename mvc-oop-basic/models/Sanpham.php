@@ -19,6 +19,18 @@ require_once '../Connect/connect.php';
     $stmt = $this->connect()->prepare($sql);
     return $stmt->execute([$id]);
   }
+   public function editSanPham($id, $ten_san_pham, $gia_san_pham , $gia_khuyen_mai,$hinh_anh,$so_luong , $ngay_nhap, $mo_ta, $danh_muc_id, $trang_thai){
+    $sql = 'UPDATE san_phams SET ten_san_pham = ?, gia_san_pham = ? , gia_khuyen_mai = ? , hinh_anh = ? , so_luong = ? , ngay_nhap = ? , mo_ta = ? , danh_muc_id =? ,trang_thai = ?  WHERE id = ?';
+    $stmt = $this->connect()->prepare($sql);
+    return $stmt -> execute([$ten_san_pham, $gia_san_pham , $gia_khuyen_mai,$hinh_anh,$so_luong ,  $ngay_nhap, $mo_ta, $danh_muc_id, $trang_thai , $id]);
+   }
+    public function detailsSanPhan($id)
+   {
+    $sql = 'SELECT * FROM san_phams WHERE id = ?';
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
    
    }
 ?>
