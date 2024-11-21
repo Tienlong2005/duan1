@@ -98,7 +98,6 @@ require_once '../models/SanPham.php';
           } 
          
           $_SESSION['errors']  = $errors;
-
           $file = $_FILES['hinh_anh'];
           $hinh_anh = $file['name'];
           if($file['size'] >0) {

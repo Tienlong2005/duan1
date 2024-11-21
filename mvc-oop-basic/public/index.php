@@ -58,15 +58,30 @@ switch ($action) {
             header('Location: index.php?act=danh-muc');
         }
         break;
-    case 'home':
+        case 'edit-admin':
+        $id = isset($_GET['id']) ? $_GET['id'] : 0;
+        if ($id) {
+            $TaikhoanAdmin->suaAdmin($id); // Gọi phương thức sửa danh mục
+        } else {
+            $_SESSION['errors'] = 'ID không hợp lệ';
+            header('Location: index.php?act=list-admin');
+        }
+        break;
+        case 'list-admin':
+            $TaikhoanAdmin->index();
+            break;
+            case 'them-admin':
+                $TaikhoanAdmin->createAddmin();
+                break;
+    case 'trang-chu':
         include '../views/client/home/index.php';
         break;
 
-    case 'signin-user':
+    case 'dang-ki':
         include '../views/client/home/register.php';
         break;
 
-    case 'login-user':
+    case 'dang-nhap':
         include '../views/client/home/login.php';
         break;
 

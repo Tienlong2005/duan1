@@ -68,11 +68,11 @@
                                                                         <th scope="col">Họ và tên </th>
                                                                         <th scope="col">Ảnh Đại Diện </th>
                                                                         <th scope="col">Ngày sinh</th>
-                                                                        <th scope="col">Giới tinh</th>
+                                                                        <th scope="col">Số Điện thoại</th>
+                                                                        <th scope="col">Giới tính</th>
                                                                         <th scope="col">Địa chỉ</th>
                                                                         <th scope="col">Chức vụ</th>
                                                                         <th scope="col">Trạng thái</th>
-                                                                        <th scope="col">Thao Tác</th>
 
                                                                     </tr>
                                                                 </thead>
@@ -84,11 +84,10 @@
                                                                         <td><?= $ad['ho_ten'];?></td>
                                                                         <td><img src="./images/category<?= $ad['anh_dai_dien']; ?>" width="100"></td>
                                                                         <td><?= $ad['ngay_sinh'];?></td>
-                                                                        
                                                                         <td><?= $ad['so_dien_thoai'];?></td>
                                                                         <td><?= $ad['gioi_tinh'];?></td>
                                                                         <td><?= $ad['dia_chi'];?></td>
-                                                                        <td><?= $ad['chuc_vu_id'];?></td>
+                                                                        <td><?= $ad['chuc_vu_id'] == 1 ? 'Admin':'Khách Hàng'?></td>
                                                                         <td><?= $ad['trang_thai'];?></td>
                                                                         
                                                                         <td>

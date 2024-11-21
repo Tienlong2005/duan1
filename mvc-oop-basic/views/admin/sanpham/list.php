@@ -89,9 +89,9 @@
                                                                         <td><img src="./images/category<?= $sp['hinh_anh']; ?>" width="100"></td>
                                                                         <td><?= $sp['so_luong'];?></td>
                                                                         <td><?= $sp['ngay_nhap'];?></td>
-                                                                        <td><?= $sp['danh_muc_id'];?></td>
+                                                                        <td><?= $sp['danh_muc_id'] ==1 ? 'Quần áo bóng đá ' : 'Giày' ?></td>
                                                                         <td><?= $sp['mo_ta'];?></td>
-                                                                        <td><?= $sp['trang_thai'];?></td>
+                                                                        <td><?= $sp['trang_thai'] == 1 ? 'Còn hàng' : 'Hết hàng' ?></td>
                                                                         <td>
                                                                             <div class="form-check form-switch">
                                                                                

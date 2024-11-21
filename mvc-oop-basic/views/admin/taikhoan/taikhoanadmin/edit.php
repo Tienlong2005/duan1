@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Trang Sửa sản phẩm</h4>
+                        <h4 class="mb-sm-0">Trang Sửa Quản trị</h4>
 
                     </div>
                 </div>
@@ -16,7 +16,7 @@
             <!-- end page title -->
           
 
-            <form action="index.php?act=edit-san-pham&id=<?=$getSanPham['id'];?>" method="post" enctype="multipart/form-data">
+            <form action="index.php?act=edit-admin&id=<?=$getAdmin['id'];?>" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-lg-12">
 
@@ -25,7 +25,7 @@
                                 <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link active" data-bs-toggle="tab" href="#addproduct-general-info" role="tab" aria-selected="true">
-                                            Bảng Update sản phẩm
+                                            Bảng Update Quản trị
                                         </a>
                                     </li>
                                 </ul>
@@ -37,10 +37,10 @@
                                         <div class="row align-items-center">
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label class="form-label">Tên Sản phẩm</label>
-                                                    <input type="text" class="form-control" name="ten_san_pham" value="<?=$getSanPham['ten_san_pham'];?>" placeholder="Nhập sản phẩm">
+                                                    <label class="form-label">Họ và tên</label>
+                                                    <input type="text" class="form-control" name="ho_ten" value="<?=$getAdmin['ho_ten'];?>" placeholder="Nhập họ và tên">
                                                     <?php if(isset($_SESSION['errors']['ten_san_pham'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['ten_san_pham'] ?></p>
+                                                    <p class="text-danger"><?= $_SESSION['errors']['ten'] ?></p>
                                                 <?php endif; ?>
                                                 </div>
                                             </div>
@@ -108,7 +108,7 @@
                                                 <div class="mb-3">
                                                     <label class="form-label">Thêm Ảnh</label>
                                                     <div class="input-group">
-                                                    
+                                                    <img src="./images/category<?= $getSanPham['hinh_anh']; ?>" width="100">
                                                     <input type="hidden" name="old_hinh_anh" value="<?=$getSanPham['ngay_nhap'];?>">
                                                     <input class="form-control" name="hinh_anh" type="file" id="hinh_anh">
                                                     <button class="btn btn-outline-secondary">Chọn ảnh</button>
