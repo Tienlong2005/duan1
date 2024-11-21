@@ -2,9 +2,11 @@
 session_start();
 require_once '../controllers/admin/DanhMucAdminController.php';
 require_once '../controllers/admin/SanPhamAdminController.php';
+require_once '../controllers/admin/TaiKhoanAdminController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : '';
 $DanhmucAdmin = new DanhMucAdminController();
 $SanphamAdmin = new SanPhamAdminController();
+$TaikhoanAdmin = new TaiKhoanAdminController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
@@ -56,6 +58,12 @@ switch ($action) {
             header('Location: index.php?act=danh-muc');
         }
         break;
+    case 'list-admin':
+        $TaikhoanAdmin->index();
+        break;
+        case 'them-admin':
+            $TaikhoanAdmin->createAddmin();
+            break;
     default:
     
     
