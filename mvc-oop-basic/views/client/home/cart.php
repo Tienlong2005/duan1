@@ -2,12 +2,12 @@
 <html class="no-js" lang="en">
 
 
-<!-- Mirrored from htmldemo.net/autima/autima/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Nov 2024 09:07:48 GMT -->
+<!-- Mirrored from htmldemo.net/autima/autima/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Nov 2024 09:08:26 GMT -->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Autima - Car Accessories Shop HTML Template </title>
+    <title>Autima - cart page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -46,17 +46,14 @@
 
 <body>
 
-    <!-- Main Wrapper Start -->
     <!--header area start-->
-    <header class="header_area">
+    <header class="header_area ">
         <!--header top start-->
         <div class="header_top">
             <div class="container">
                 <div class="top_inner">
                     <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-6">
-                        </div>
-                        <div class="col-lg-6 col-md-6">
+                        <div class="col-lg-12 col-md-12">
                             <div class="top_right text-end">
                                 <ul>
                                     <li class="top_links"><a href="#"><i class="ion-android-person"></i> My Account<i class="ion-ios-arrow-down"></i></a>
@@ -74,6 +71,8 @@
                 </div>
             </div>
         </div>
+        <!--header top start-->
+        <!--header middel start-->
         <div class="header_middle">
             <div class="container">
                 <div class="row align-items-center">
@@ -101,7 +100,6 @@
                                 <div class="mini_cart_wrapper">
                                     <a href="javascript:void(0)"><span class="lnr lnr-cart"></span>My Cart </a>
                                     <span class="cart_quantity">2</span>
-
                                 </div>
                             </div>
 
@@ -175,7 +173,7 @@
         <!--mini cart end-->
 
         <!--header bottom satrt-->
-        <div class="header_bottom sticky-header">
+        <div class="header_bottom mb-0 sticky-header">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12">
@@ -268,12 +266,14 @@
             </div>
         </div>
         <!--header bottom end-->
+
     </header>
     <!--header area end-->
 
+
     <!--Offcanvas menu area start-->
     <div class="off_canvars_overlay"></div>
-    <div class="Offcanvas_menu">
+    <div class="Offcanvas_menu canvas_padding">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -298,6 +298,30 @@
                                         <li><a href="wishlist.html">Wishlist</a></li>
                                     </ul>
                                 </li>
+                                <li class="language"><a href="#"><img src="client/assets/img/logo/language.png" alt="">en-gb<i class="ion-ios-arrow-down"></i></a>
+                                    <ul class="dropdown_language">
+                                        <li><a href="#"><img src="client/assets/img/logo/language.png" alt=""> English</a></li>
+                                        <li><a href="#"><img src="client/assets/img/logo/language2.png" alt=""> Germany</a></li>
+                                    </ul>
+                                </li>
+                                <li class="currency"><a href="#">$ USD<i class="ion-ios-arrow-down"></i></a>
+                                    <ul class="dropdown_currency">
+                                        <li><a href="#">EUR – Euro</a></li>
+                                        <li><a href="#">GBP – British Pound</a></li>
+                                        <li><a href="#">INR – India Rupee</a></li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="Offcanvas_follow">
+                            <label>Follow Us:</label>
+                            <ul class="follow_link">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
                             </ul>
                         </div>
                         <div class="search-container">
@@ -398,266 +422,210 @@
     </div>
     <!--Offcanvas menu area end-->
 
-    <!--slider area start-->
-    <section class="slider_section mb-50">
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-12">
-                    <div class="categories_menu">
-                        <div class="categories_title">
-                            <h2 class="categori_toggle">Browse categories</h2>
-                        </div>
-                        <div class="categories_menu_toggle">
-                            <ul>
-                                <li class="menu_item_children categorie_list"><a href="#">Brake Parts <i class="fa fa-angle-right"></i></a>
-                                    <ul class="categories_mega_menu">
-                                        <li class="menu_item_children"><a href="#">Wheel Bearings</a>
-                                            <ul class="categorie_sub_menu">
-                                                <li><a href="#">Bower</a></li>
-                                                <li><a href="#">Flipbac</a></li>
-                                                <li><a href="#">Gary Fong</a></li>
-                                                <li><a href="#">GigaPan</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu_item_children"><a href="#">Wheel Rim Screws</a>
-                                            <ul class="categorie_sub_menu">
-                                                <li><a href="#">Accessories</a></li>
-                                                <li><a href="#">2-Stroke</a></li>
-                                                <li><a href="#">Handbag</a></li>
-                                                <li><a href="#">Clothing</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu_item_children last_child"><a href="#">Wheel Simulators</a>
-                                            <ul class="categorie_sub_menu">
-                                                <li><a href="#">Bags & Cases</a></li>
-                                                <li><a href="#">Binoculars & Scopes</a></li>
-                                                <li><a href="#">Film Photography</a></li>
-                                                <li><a href="#">Lighting & Studio</a></li>
-                                            </ul>
-                                            <div class="categorie_banner">
-                                                <a href="#"><img src="client/assets/img/bg/banner2.jpg" alt=""></a>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li class="menu_item_children"><a href="#"> Wheels & Tires <i class="fa fa-angle-right"></i></a>
-                                    <ul class="categories_mega_menu">
-                                        <li class="menu_item_children"><a href="#">Dresses</a>
-                                            <div class="categorie_sub_menu">
-                                                <ul>
-                                                    <li><a href="#">Sweater</a></li>
-                                                    <li><a href="#">Evening</a></li>
-                                                    <li><a href="#">Day</a></li>
-                                                    <li><a href="#">Sports</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="menu_item_children"><a href="#">Handbags</a>
-                                            <div class="categorie_sub_menu">
-                                                <ul>
-                                                    <li><a href="#">Shoulder</a></li>
-                                                    <li><a href="#">Satchels</a></li>
-                                                    <li><a href="#">kids</a></li>
-                                                    <li><a href="#">coats</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="menu_item_children"><a href="#">shoes</a>
-                                            <div class="categorie_sub_menu">
-                                                <ul>
-                                                    <li><a href="#">Ankle Boots</a></li>
-                                                    <li><a href="#">Clog sandals </a></li>
-                                                    <li><a href="#">run</a></li>
-                                                    <li><a href="#">Books</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="menu_item_children"><a href="#">Clothing</a>
-                                            <div class="categorie_sub_menu">
-                                                <ul>
-                                                    <li><a href="#">Coats Jackets </a></li>
-                                                    <li><a href="#">Raincoats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li class="menu_item_children"><a href="#"> Furnitured & Decor <i class="fa fa-angle-right"></i></a>
-                                    <ul class="categories_mega_menu column_3">
-                                        <li class="menu_item_children"><a href="#">Chair</a>
-                                            <div class="categorie_sub_menu">
-                                                <ul>
-                                                    <li><a href="#">Dining room</a></li>
-                                                    <li><a href="#">bedroom</a></li>
-                                                    <li><a href="#"> Home & Office</a></li>
-                                                    <li><a href="#">living room</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="menu_item_children"><a href="#">Lighting</a>
-                                            <div class="categorie_sub_menu">
-                                                <ul>
-                                                    <li><a href="#">Ceiling Lighting</a></li>
-                                                    <li><a href="#">Wall Lighting</a></li>
-                                                    <li><a href="#">Outdoor Lighting</a></li>
-                                                    <li><a href="#">Smart Lighting</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="menu_item_children"><a href="#">Sofa</a>
-                                            <div class="categorie_sub_menu">
-                                                <ul>
-                                                    <li><a href="#">Fabric Sofas</a></li>
-                                                    <li><a href="#">Leather Sofas</a></li>
-                                                    <li><a href="#">Corner Sofas</a></li>
-                                                    <li><a href="#">Sofa Beds</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu_item_children"><a href="#"> Turbo System <i class="fa fa-angle-right"></i></a>
-                                    <ul class="categories_mega_menu column_2">
-                                        <li class="menu_item_children"><a href="#">Brake Tools</a>
-                                            <div class="categorie_sub_menu">
-                                                <ul>
-                                                    <li><a href="#">Driveshafts</a></li>
-                                                    <li><a href="#">Spools</a></li>
-                                                    <li><a href="#">Diesel </a></li>
-                                                    <li><a href="#">Gasoline</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="menu_item_children"><a href="#">Emergency Brake</a>
-                                            <div class="categorie_sub_menu">
-                                                <ul>
-                                                    <li><a href="#">Dolls for Girls</a></li>
-                                                    <li><a href="#">Girls' Learning Toys</a></li>
-                                                    <li><a href="#">Arts and Crafts for Girls</a></li>
-                                                    <li><a href="#">Video Games for Girls</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li class="menu_item_children"><a href="#"> Lighting <i class="fa fa-angle-right"></i></a>
-                                    <ul class="categories_mega_menu column_2">
-                                        <li class="menu_item_children"><a href="#">Check Trousers</a>
-                                            <div class="categorie_sub_menu">
-                                                <ul>
-                                                    <li><a href="#">Building</a></li>
-                                                    <li><a href="#">Electronics</a></li>
-                                                    <li><a href="#">action figures </a></li>
-                                                    <li><a href="#">specialty & boutique toy</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="menu_item_children"><a href="#">Calculators</a>
-                                            <div class="categorie_sub_menu">
-                                                <ul>
-                                                    <li><a href="#">Dolls for Girls</a></li>
-                                                    <li><a href="#">Girls' Learning Toys</a></li>
-                                                    <li><a href="#">Arts and Crafts for Girls</a></li>
-                                                    <li><a href="#">Video Games for Girls</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li><a href="#"> Accessories</a></li>
-                                <li><a href="#">Body Parts</a></li>
-                                <li><a href="#">Perfomance Filters</a></li>
-                                <li><a href="#"> Engine Parts</a></li>
-                                <li class="hidden"><a href="shop-left-sidebar.html">New Sofas</a></li>
-                                <li class="hidden"><a href="shop-left-sidebar.html">Sleight Sofas</a></li>
-                                <li><a href="#" id="more-btn"><i class="fa fa-plus" aria-hidden="true"></i> More Categories</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-12">
-                    <div class="slider_area owl-carousel">
-                        <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/slider1.jpg">
-                            <div class="slider_content">
-                                <h2>Top Quality</h2>
-                                <h1>Aftermarket Turbocharger Specialist</h1>
-                                <a class="button" href="shop.html">shopping now</a>
-                            </div>
-
-                        </div>
-                        <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/slider2.jpg">
-                            <div class="slider_content">
-                                <h2>Height - Quality</h2>
-                                <h1>The Parts Of shock Absorbers & Brake Kit</h1>
-                                <a class="button" href="shop.html">shopping now</a>
-                            </div>
-                        </div>
-                        <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/slider3.jpg">
-                            <div class="slider_content">
-                                <h2>Engine Oils</h2>
-                                <h1>Top Quality Oil For Every Vehicle</h1>
-                                <a class="button" href="shop.html">shopping now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!--slider area end-->
-
-    <!--shipping area start-->
-    <section class="shipping_area mb-50">
-        <div class="container">
-            <div class=" row">
                 <div class="col-12">
-                    <div class="shipping_inner">
-                        <div class="single_shipping">
-                            <div class="shipping_icone">
-                                <img src="client/assets/img/about/shipping1.png" alt="">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li>Shopping Cart</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs area end-->
+
+    <!--shopping cart area start -->
+    <div class="shopping_cart_area mt-32">
+        <div class="container">
+            <form action="#">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table_desc">
+                            <div class="cart_page table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="product_remove">Delete</th>
+                                            <th class="product_thumb">Image</th>
+                                            <th class="product_name">Product</th>
+                                            <th class="product-price">Price</th>
+                                            <th class="product_quantity">Quantity</th>
+                                            <th class="product_total">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                            <td class="product_thumb"><a href="#"><img src="client/assets/img/s-product/product.jpg" alt=""></a></td>
+                                            <td class="product_name"><a href="#">Handbag fringilla</a></td>
+                                            <td class="product-price">£65.00</td>
+                                            <td class="product_quantity"><label>Quantity</label> <input min="1" max="100" value="1" type="number"></td>
+                                            <td class="product_total">£130.00</td>
+
+
+                                        </tr>
+
+                                        <tr>
+                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                            <td class="product_thumb"><a href="#"><img src="client/assets/img/s-product/product2.jpg" alt=""></a></td>
+                                            <td class="product_name"><a href="#">Handbags justo</a></td>
+                                            <td class="product-price">£90.00</td>
+                                            <td class="product_quantity"><label>Quantity</label> <input min="1" max="100" value="1" type="number"></td>
+                                            <td class="product_total">£180.00</td>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                            <td class="product_thumb"><a href="#"><img src="client/assets/img/s-product/product5.jpg" alt=""></a></td>
+                                            <td class="product_name"><a href="#">Handbag elit</a></td>
+                                            <td class="product-price">£80.00</td>
+                                            <td class="product_quantity"><label>Quantity</label> <input min="1" max="100" value="1" type="number"></td>
+                                            <td class="product_total">£160.00</td>
+
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="shipping_content">
-                                <h2>Free Shipping</h2>
-                                <p>Free shipping on all US order</p>
+                            <div class="cart_submit">
+                                <button type="submit">update cart</button>
                             </div>
                         </div>
-                        <div class="single_shipping">
-                            <div class="shipping_icone">
-                                <img src="client/assets/img/about/shipping2.png" alt="">
-                            </div>
-                            <div class="shipping_content">
-                                <h2>Support 24/7</h2>
-                                <p>Contact us 24 hours a day</p>
-                            </div>
-                        </div>
-                        <div class="single_shipping">
-                            <div class="shipping_icone">
-                                <img src="client/assets/img/about/shipping3.png" alt="">
-                            </div>
-                            <div class="shipping_content">
-                                <h2>100% Money Back</h2>
-                                <p>You have 30 days to Return</p>
+                    </div>
+                </div>
+                <!--coupon code area start-->
+                <div class="coupon_area">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="coupon_code left">
+                                <h3>Coupon</h3>
+                                <div class="coupon_inner">
+                                    <p>Enter your coupon code if you have one.</p>
+                                    <input placeholder="Coupon code" type="text">
+                                    <button type="submit">Apply coupon</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="single_shipping">
-                            <div class="shipping_icone">
-                                <img src="client/assets/img/about/shipping4.png" alt="">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="coupon_code right">
+                                <h3>Cart Totals</h3>
+                                <div class="coupon_inner">
+                                    <div class="cart_subtotal">
+                                        <p>Subtotal</p>
+                                        <p class="cart_amount">£215.00</p>
+                                    </div>
+                                    <div class="cart_subtotal ">
+                                        <p>Shipping</p>
+                                        <p class="cart_amount"><span>Flat Rate:</span> £255.00</p>
+                                    </div>
+                                    <a href="#">Calculate shipping</a>
+
+                                    <div class="cart_subtotal">
+                                        <p>Total</p>
+                                        <p class="cart_amount">£215.00</p>
+                                    </div>
+                                    <div class="checkout_btn">
+                                        <a href="#">Proceed to Checkout</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="shipping_content">
-                                <h2>Payment Secure</h2>
-                                <p>We ensure secure payment</p>
+                        </div>
+                    </div>
+                </div>
+                <!--coupon code area end-->
+            </form>
+        </div>
+    </div>
+    <hr>
+    <footer class="footer_widgets">
+        <div class="container">
+            <div class="footer_top">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widgets_container contact_us">
+                            <div class="footer_logo">
+                                <a href="#"><img src="client/assets/img/logo/logo.png" alt=""></a>
+                            </div>
+                            <div class="footer_contact">
+                                <p>We are a team of designers and developers that
+                                    create high quality Magento, Prestashop, Opencart...</p>
+                                <p><span>Address</span> 4710-4890 Breckinridge St, UK Burlington, VT 05401</p>
+                                <p><span>Need Help?</span>Call: <a href="tel:1-800-345-6789">1-800-345-6789</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="widgets_container widget_menu">
+                            <h3>Information</h3>
+                            <div class="footer_menu">
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="#">Delivery Information</a></li>
+                                    <li><a href="privacy-policy.html">privacy policy</a></li>
+                                    <li><a href="coming-soon.html">Coming Soon</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Returns</a></li>
+                                    <li><a href="#">Gift Certificates</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="widgets_container widget_menu">
+                            <h3>Extras</h3>
+                            <div class="footer_menu">
+                                <ul>
+                                    <li><a href="#">Returns</a></li>
+                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="wishlist.html">Wish List</a></li>
+                                    <li><a href="#">Newsletter</a></li>
+                                    <li><a href="#">Affiliate</a></li>
+                                    <li><a href="#">Specials</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widgets_container">
+                            <h3>Newsletter Subscribe</h3>
+                            <p>We’ll never share your email address with a third-party.</p>
+                            <div class="subscribe_form">
+                                <form id="mc-form" class="mc-form footer-newsletter">
+                                    <input id="mc-email" type="email" autocomplete="off" placeholder="Enter you email address here..." />
+                                    <button id="mc-submit">Subscribe</button>
+                                </form>
+                                <!-- mailchimp-alerts Start -->
+                                <div class="mailchimp-alerts text-centre">
+                                    <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                    <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                    <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                                </div><!-- mailchimp-alerts end -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="footer_bottom">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="copyright_area">
+                            <p>Copyright &copy; 2021 <a href="#">Autima</a> All Right Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer_payment text-right">
+                            <a href="#"><img src="client/assets/img/icon/payment.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </footer>
+    <?php include '../views/client/layout/footer.php' ?>
