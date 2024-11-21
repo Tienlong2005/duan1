@@ -27,12 +27,12 @@ switch ($action) {
         }
         break;
     case 'xoa-san-pham';
-        $id = isset($_GET['id']) ? $_GET['id'] : 0;
-        if ($id) {
-            $SanphamAdmin->deleteSanPham($id);
-        } else {
-            $_SESSION['errors'] = 'ID không hợp lệ';
-        }
+    $id = isset($_GET['id']) ? $_GET['id'] : 0;
+    if ($id) {
+        $SanphamAdmin->deleteSanPham($id);
+    } else {
+        $_SESSION['errors'] = 'ID không hợp lệ';
+    }
         break;
     case 'danh-muc':
         $DanhmucAdmin->index();
@@ -58,30 +58,15 @@ switch ($action) {
             header('Location: index.php?act=danh-muc');
         }
         break;
-        case 'edit-admin':
-        $id = isset($_GET['id']) ? $_GET['id'] : 0;
-        if ($id) {
-            $TaikhoanAdmin->suaAdmin($id); // Gọi phương thức sửa danh mục
-        } else {
-            $_SESSION['errors'] = 'ID không hợp lệ';
-            header('Location: index.php?act=list-admin');
-        }
-        break;
-        case 'list-admin':
-            $TaikhoanAdmin->index();
-            break;
-            case 'them-admin':
-                $TaikhoanAdmin->createAddmin();
-                break;
-    case 'trang-chu':
+    case 'home':
         include '../views/client/home/index.php';
         break;
 
-    case 'dang-ki':
+    case 'signin-user':
         include '../views/client/home/register.php';
         break;
 
-    case 'dang-nhap':
+    case 'login-user':
         include '../views/client/home/login.php';
         break;
 
@@ -99,4 +84,6 @@ switch ($action) {
         include '../views/client/home/checkOut.php';
         break;
     default:
+    
+    
 }
