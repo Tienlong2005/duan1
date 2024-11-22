@@ -103,12 +103,8 @@ require_once '../models/Taikhoan.php';
         $_SESSION['errors']  = $errors;
        
         $file = $_FILES['anh_dai_dien'];
-        $anh_dai_dien = $file['name'];
-        
- 
-          // Nếu không có lỗi, thực hiện cập nhật
-         
-              // Gọi phương thức update trong model để cập nhật dữ liệu
+        $anh_dai_dien = $file['name'];    
+             
               $suaAdmin = $this->editAdmin( $_POST['id'], $_POST['ho_ten'], $anh_dai_dien , $_POST['ngay_sinh' ], $_POST['email'] , $_POST['so_dien_thoai'],  $_POST['gioi_tinh'], $_POST['dia_chi'], $_POST['mat_khau'], $_POST['chuc_vu_id'], $_POST['trang_thai']);
               if ($suaAdmin) {
                   $_SESSION['success'] = 'Cập nhật danh mục thành công';

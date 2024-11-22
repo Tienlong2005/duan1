@@ -16,7 +16,7 @@
             <!-- end page title -->
           
 
-            <form action="index.php?act=edit-san-pham&id=<?=$getSanPham['id'];?>" method="post" enctype="multipart/form-data">
+            <form action="index.php?act=edit-san-pham&id=<?=$getSanPham['id'];?>"  method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-lg-12">
 
@@ -49,9 +49,9 @@
                                                 <div class="mb-3">
                                                     <label class="form-label">Danh Mục</label>
                                                     <select class="form-select" aria-label="Default select example" name="danh_muc_id" >
-                                                        <option selected>Chọn Danh Mục</option>
-                                                        <option value="22">Quần áo bóng đá</option>
-                                                        <option value="23"> giày</option>
+                                                        <option   selected>Chọn Danh Mục</option>
+                                                        <option value="1">Quần áo bóng đá</option>
+                                                        <option value="2"> giày</option>
                                                     </select>
                                                 </div>
                                             </div>

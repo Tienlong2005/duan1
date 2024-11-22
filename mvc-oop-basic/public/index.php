@@ -89,8 +89,8 @@ switch ($action) {
         include '../views/client/home/detail.php';
         break;
 
-    case 'user-info':
-        include '../views/client/home/user.php';
+    case 'tai-khoan-ca-nhan':
+        include '../views/admin/taikhoan/cannhan/editcanhan.php';
         break;
     case 'cart':
         include '../views/client/home/cart.php';

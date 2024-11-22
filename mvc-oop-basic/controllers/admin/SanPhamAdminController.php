@@ -66,6 +66,7 @@ require_once '../models/SanPham.php';
      public function suaSanPham($id){
         $getSanPham = $this->detailsSanPhan($id);
         if($getSanPham){
+        
          if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['edit-san-pham'])){
             $this->updateSanPham($id);
         }
@@ -102,20 +103,23 @@ require_once '../models/SanPham.php';
           $hinh_anh = $file['name'];
           if($file['size'] >0) {
             move_uploaded_file($file['tmp_name'], './images/category/' . $hinh_anh);
+            
             if(!empty($_POST['old_hinh_anh']) && file_exists('./images/category/' . $_POST['old_hinh_anh'])){
                 unlink('./images/category/' . $_POST['old_hinh_anh']);
             }
           } else {
             $hinh_anh = $_POST['old_hinh_anh'];
           }
-          $suaSanPham = $this->editSanPham($_POST['id'], $_POST['ten_san_pham'],$_POST['gia_san_pham' ],$_POST['gia_khuyen_mai'], $hinh_anh ,$_POST['so_luong'],  $_POST['ngay_nhap'], $_POST['mo_ta'], $_POST['danh_muc_id'], $_POST['trang_thai']);
+          
+          $suaSanPham = $this->editSanPham($id, $_POST['ten_san_pham'],$_POST['gia_san_pham' ],$_POST['gia_khuyen_mai'], $hinh_anh ,$_POST['so_luong'],  $_POST['ngay_nhap'], $_POST['mo_ta'], $_POST['danh_muc_id'], $_POST['trang_thai']);
+         //  var_dump($suaSanPham);die;
           if($suaSanPham){
             $_SESSION['success'] = 'sửa sản phẩm thành công';
             header('Location: index.php?act=san-pham');
             exit();
          }else{
            $_SESSION['errors'] = 'Thêm sản phẩm thất bại. Mời nhập lại ';
-           // header('Location:'.$_SERVER['HTTP_REFERER']);
+          
           
           
         }
