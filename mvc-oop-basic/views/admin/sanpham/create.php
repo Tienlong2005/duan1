@@ -107,7 +107,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label class="form-label">Thêm Ảnh</label>
-                                                    <div class="input-group">
+                                                    <div class="input-group">  
                                                     <input class="form-control" name="hinh_anh" type="file" id="hinh_anh">
                                                     <button class="btn btn-outline-secondary">Chọn ảnh</button>
                                                     </div>

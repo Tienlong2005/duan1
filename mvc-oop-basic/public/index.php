@@ -37,6 +37,7 @@ switch ($action) {
     case 'danh-muc':
         $DanhmucAdmin->index();
         break;
+
     case 'xoa-danh-muc':
         $id = isset($_GET['id']) ? $_GET['id'] : 0;
         if ($id) {
@@ -70,6 +71,24 @@ switch ($action) {
         case 'list-admin':
             $TaikhoanAdmin->index();
             break;
+
+
+            case 'cam-admin':
+                $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+                $trang_thai = isset($_GET['trang_thai']) ? (int)$_GET['trang_thai'] : null;
+            
+                if ($id && in_array($trang_thai, [1, 2])) {
+                    $TaikhaonAdmin->quyenAdmin($id, $trang_thai);
+                    $_SESSION['success'] = 'Cập nhật trạng thái thành công!';
+                } else {
+                    $_SESSION['errors'] = 'ID hoặc trạng thái không hợp lệ';
+                }
+            
+                header('Location: index.php?act=list-admin');
+                exit();
+                break;
+            
+            
             case 'them-admin':
                 $TaikhoanAdmin->createAddmin();
                 break;
