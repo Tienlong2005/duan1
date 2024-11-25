@@ -31,6 +31,13 @@ require_once '../Connect/connect.php';
     $stmt->execute([$id]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
+  public function showSanPham()
+  {
+    $sql = 'SELECT *FROM san_phams';
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll();
+  }
    
    }
 ?>

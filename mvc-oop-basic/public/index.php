@@ -6,6 +6,7 @@ require_once '../controllers/admin/TaiKhoanAdminController.php';
 require_once '../controllers/admin/DonHangAdminController.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/admin/ProfileController.php';
+require_once '../controllers/client/SanPhamController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : '';
 $DanhmucAdmin = new DanhMucAdminController();
 $SanphamAdmin = new SanPhamAdminController();
@@ -13,6 +14,7 @@ $TaikhoanAdmin = new TaiKhoanAdminController();
 $DonHangAdmin = new DonHangAdminController();
 $AuthClient = new AuthController();
 $Profile = new ProfileController();
+$SanPhamClient = new SanPhamController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
@@ -75,7 +77,6 @@ switch ($action) {
         case 'them-admin':
             $TaikhoanAdmin->createAddmin();
             break;
-    
         case 'edit-admin':
             $id = isset($_GET['id']) ? $_GET['id'] : 0;
             if ($id) {
@@ -112,7 +113,7 @@ switch ($action) {
         case "update-don-hang":
             $DonHangAdmin->updateDonHang();
     case 'trang-chu':
-        include '../views/client/home/home.php';
+        $SanPhamClient->showSanPhamClient();
         break;
 
         case 'dang-ky':
