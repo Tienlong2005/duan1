@@ -2,7 +2,7 @@
 <!--shopping cart area start -->
 <div class="shopping_cart_area mt-32">
     <div class="container">
-        <form action="#">
+        <form action="index.php?act=gio-hang" method="post">
             <div class="row">
                 <div class="col-12">
                     <div class="table_desc">

@@ -6,7 +6,7 @@
                 <div class="product-details-tab">
 
                     <div id="img-1" class="zoomWrapper single-zoom">
-                        <a href="#">
+                        <a href="index.php?act=chi-tiet-san-pham">
                             <img id="zoom1" src="<?php echo $showDetailSanPhamClient['hinh_anh'] ?>" data-zoom-image="<?php echo $showDetailSanPhamClient['hinh_anh'] ?>" alt="big-1">
                         </a>
                     </div>

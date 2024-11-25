@@ -14,7 +14,7 @@
         <div class="checkout_form">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
-                    <form action="#">
+                    <form action="index.php?act=kiem-tra">
                         <h3>Your order</h3>
                         <div class="order_table table-responsive">
                             <table>

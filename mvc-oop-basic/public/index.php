@@ -92,30 +92,34 @@ switch ($action) {
             case 'them-admin':
                 $TaikhoanAdmin->createAddmin();
                 break;
+               
+                case 'list-khach':
+                    $TaikhoanAdmin->khachhang();
+                    break;
     case 'trang-chu':
-        include '../views/client/home/index.php';
+        include '../views/client/home/home.php';
         break;
 
     case 'dang-ki':
         include '../views/client/home/register.php';
         break;
 
-    case 'dang-nhap':
-        include '../views/client/home/login.php';
+    case 'signin':
+        include '../views/client/auth/login.php';
         break;
 
-    case 'detail-pro':
-        include '../views/client/home/detail.php';
+    case 'chi-tiet-gio-hang':
+        include '../views/client/product/detail.php';
         break;
 
     case 'tai-khoan-ca-nhan':
-        include '../views/admin/taikhoan/cannhan/editcanhan.php';
+        include '../views/client/profile/profile.php';
         break;
-    case 'cart':
-        include '../views/client/home/cart.php';
+    case 'gio-hang':
+        include '../views/client/cart/cart.php';
         break;
-    case 'check-out':
-        include '../views/client/home/checkOut.php';
+    case 'kiem-tra':
+        include '../views/client/cart/checkOut.php';
         break;
     default:
 }

@@ -59,7 +59,7 @@
                         <!-- Account Details Tab -->
                         <div class="tab-pane fade" id="account-details">
                             <h3 class="mb-4">Account Details</h3>
-                            <form action="POST" method="?act=update-profile">
+                            <form action="POST" method="index.php?act=tai-khoan-ca-nhan">
                                 <div class="form-group">
                                     <label for="ho_ten">Họ Tên</label>
                                     <input type="text" name="ho_ten" class="form-control" value="<?= $_SESSION['user']['ho_ten'] ?>">
@@ -99,7 +99,7 @@
                                     <?php endif; ?>
                                 </div>
                                 <br>
-                                <button type="submit" name="update-profile" class="btn btn-primary">Cập nhật profile</button>
+                                <button type="submit" name="tai-khoan-ca-nhan" class="btn btn-primary">Cập nhật profile</button>
                             </form>
                         </div>
 

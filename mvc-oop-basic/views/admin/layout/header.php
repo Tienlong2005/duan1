@@ -148,26 +148,22 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarDashboards">
-                                <i class="ri-color-filter-line"></i> <span data-key="t-dashboards">Màu Sắc Kích Thước</span>
-                            </a>
-                        </li>
+                     
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="index.php?act=product">
+                            <a class="nav-link menu-link" href="index.php?act=san-pham">
                                 <i class="ri-instance-fill"></i> <span data-key="t-dashboards">Sản Phẩm</span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarDashboards">
+                            <a class="nav-link menu-link" href="index.php?act=don-hang">
                                 <i class="ri-article-line"></i> <span data-key="t-dashboards">Đơn Hàng</span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarDashboards">
+                            <a class="nav-link menu-link" href="index.php?act=vouchers">
                                 <i class="ri-coupon-line"></i> <span data-key="t-dashboards">Vouchers</span>
                             </a>
                         </li>
@@ -178,10 +174,10 @@
                             <div class="collapse menu-dropdown" id="sidebarAuth">
                                 <ul class="nav nav-sm flex-column">
                                     <li>
-                                        <a href="#sidebarSignIn" class="nav-link">User</a>
+                                        <a href="index.php?act=list-khach" class="nav-link">User</a>
                                     </li>
                                     <li>
-                                        <a href="#sidebarSignIn" class="nav-link">Admin</a>
+                                        <a href="index.php?act=list-admin" class="nav-link">Admin</a>
                                     </li>
                                 </ul>
                             </div>

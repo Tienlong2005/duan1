@@ -103,7 +103,7 @@
                                                                                         <i class="ri-settings-fill"></i>
                                                                                     </a>
 
-
+                                                                                   
                                                                                     <form action="index.php?act=cam-admin" method="post" style="display:inline;">
                                                                                         <input type="hidden" name="id" value="<?= $ad['id']; ?>">
                                                                                         <input type="hidden" name="trang_thai" value="<?= $ad['trang_thai'] == 1 ? 2 : 1; ?>">
