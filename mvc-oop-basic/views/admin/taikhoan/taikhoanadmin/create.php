@@ -116,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                <?php var_dump($_POST);die() ?>
+               
             </form>
             
         </div>
