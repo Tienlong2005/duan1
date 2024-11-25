@@ -62,18 +62,22 @@
                                             <i class="ion-android-person"></i>
                                             <?php
                                             if (isset($_SESSION['user'])) {
-                                                echo 'Hello, ' . ($_SESSION['user']['ho_ten']);
+                                                echo ($_SESSION['user']['ho_ten']);
                                             } else {
-                                                echo 'Hello, Khách';
+                                                echo 'Khách';
                                             }
                                             ?>
-
                                             <i class="ion-ios-arrow-down"></i>
                                         </a>
                                         <ul class="dropdown_links">
                                             <li><a href="?act=check-out">Thanh Toán</a></li>
                                             <li><a href="?act=profiles">Tài Khoản</a></li>
                                             <li><a href="?act=cart">Giỏ Hàng</a></li>
+                                            <li>
+                                                <form action="?act=dang-xuat" method="post">
+                                                    <button type="submit" class="btn btn-danger btn-sm">Logout</button>
+                                                </form>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>

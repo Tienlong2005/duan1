@@ -33,12 +33,11 @@
                 <div class="d-flex justify-content-center"> <!-- Đưa nút ra giữa -->
                     <button type="submit" name="register" class="btn btn-primary">Đăng Ký</button>
                 </div>
-                        </form>
+                <?php var_dump($_POST)?>
+                    </form>
                     </div>
                 </div>
-                <!--register area end-->
             </div>
-            <!--register area end-->
         </div>
     </div>
 </div>

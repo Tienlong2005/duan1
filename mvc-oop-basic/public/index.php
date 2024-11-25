@@ -4,11 +4,15 @@ require_once '../controllers/admin/DanhMucAdminController.php';
 require_once '../controllers/admin/SanPhamAdminController.php';
 require_once '../controllers/admin/TaiKhoanAdminController.php';
 require_once '../controllers/admin/DonHangAdminController.php';
+require_once '../controllers/client/AuthController.php';
+require_once '../controllers/admin/ProfileController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : '';
 $DanhmucAdmin = new DanhMucAdminController();
 $SanphamAdmin = new SanPhamAdminController();
 $TaikhoanAdmin = new TaiKhoanAdminController();
 $DonHangAdmin = new DonHangAdminController();
+$AuthClient = new AuthController();
+$Profile = new ProfileController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
@@ -111,14 +115,19 @@ switch ($action) {
         include '../views/client/home/home.php';
         break;
 
-    case 'dang-ki':
-        include '../views/client/home/register.php';
-        break;
+        case 'dang-ky':
+            $AuthClient->resgister();
+            break;
+    
+        case 'dang-nhap':
+            $AuthClient->logins();
+            break;
 
-    case 'signin':
-        include '../views/client/auth/login.php';
-        break;
-
+        case 'update-profile':
+            $Profile->updateProfie();
+            break;
+        case 'dang-xuat':
+            $AuthClient->logout();
     case 'chi-tiet-gio-hang':
         include '../views/client/product/detail.php';
         break;
