@@ -3,10 +3,12 @@ session_start();
 require_once '../controllers/admin/DanhMucAdminController.php';
 require_once '../controllers/admin/SanPhamAdminController.php';
 require_once '../controllers/admin/TaiKhoanAdminController.php';
+require_once '../controllers/admin/DonHangAdminController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : '';
 $DanhmucAdmin = new DanhMucAdminController();
 $SanphamAdmin = new SanPhamAdminController();
 $TaikhoanAdmin = new TaiKhoanAdminController();
+$DonHangAdmin = new DonHangAdminController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
@@ -92,7 +94,19 @@ switch ($action) {
             }
             header('Location: index.php?act=list-admin');
             exit();
-            break;  
+            break; 
+            
+         case 'don-hang':
+            $DonHangAdmin->index();
+            break;
+        case 'chi-tiet-don-hang':
+            $DonHangAdmin->detailDonHang();
+            break;
+        case 'edit-don-hang':
+            $DonHangAdmin->getIdDonHang();
+            break;
+        case "update-don-hang":
+            $DonHangAdmin->updateDonHang();
     case 'trang-chu':
         include '../views/client/home/home.php';
         break;
