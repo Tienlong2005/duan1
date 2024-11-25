@@ -59,43 +59,40 @@ switch ($action) {
             header('Location: index.php?act=danh-muc');
         }
         break;
-        case 'edit-admin':
-        $id = isset($_GET['id']) ? $_GET['id'] : 0;
-        if ($id) {
-            $TaikhoanAdmin->suaAdmin($id); // Gọi phương thức sửa danh mục
-        } else {
-            $_SESSION['errors'] = 'ID không hợp lệ';
-            header('Location: index.php?act=list-admin');
-        }
-        break;
         case 'list-admin':
-            $TaikhoanAdmin->index();
+            $TaikhoanAdmin->danhSachAdmin();
             break;
-
-
-            case 'cam-admin':
-                $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
-                $trang_thai = isset($_GET['trang_thai']) ? (int)$_GET['trang_thai'] : null;
-            
-                if ($id && in_array($trang_thai, [1, 2])) {
-                    $TaikhaonAdmin->quyenAdmin($id, $trang_thai);
-                    $_SESSION['success'] = 'Cập nhật trạng thái thành công!';
-                } else {
-                    $_SESSION['errors'] = 'ID hoặc trạng thái không hợp lệ';
-                }
-            
+        case 'list-khach-hang':
+            $TaikhoanAdmin->danhSachKhachHang();
+            break;
+    
+        case 'them-admin':
+            $TaikhoanAdmin->createAddmin();
+            break;
+    
+        case 'edit-admin':
+            $id = isset($_GET['id']) ? $_GET['id'] : 0;
+            if ($id) {
+                $TaikhoanAdmin->suaAdmin($id);
+            } else {
+                $_SESSION['errors'] = 'ID không hợp lệ';
                 header('Location: index.php?act=list-admin');
-                exit();
-                break;
-            
-            
-            case 'them-admin':
-                $TaikhoanAdmin->createAddmin();
-                break;
-               
-                case 'list-khach':
-                    $TaikhoanAdmin->khachhang();
-                    break;
+            }
+            break;
+       
+        case 'cam-admin':
+            $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
+            $trang_thai = isset($_POST['trang_thai']) ? (int)$_POST['trang_thai'] : null;
+    
+            if ($id && in_array($trang_thai, [1, 2])) {
+                $TaikhoanAdmin->quyenAdmin($id, $trang_thai);
+                $_SESSION['success'] = 'Cập nhật trạng thái thành công!';
+            } else {
+                $_SESSION['errors'] = 'ID hoặc trạng thái không hợp lệ';
+            }
+            header('Location: index.php?act=list-admin');
+            exit();
+            break;  
     case 'trang-chu':
         include '../views/client/home/home.php';
         break;
