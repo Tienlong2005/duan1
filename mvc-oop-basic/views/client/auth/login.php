@@ -7,7 +7,7 @@
             <div class="col-lg-12 col-md-12">
                 <div class="account_form register">
                     <h2 class="text-center">Đăng Nhập</h2> <!-- Canh giữa tiêu đề -->
-                    <form action="?act=signin" method="POST">
+                    <form action="?act=dang-nhap" method="POST">
                         <p>
                             <label>Nhập Email <span></span></label>
                             <input type="text" name="email" class="form-control">
