@@ -17,13 +17,9 @@
                             <li>
                                 <a href="#change-password" data-toggle="tab" class="nav-link">Change Password</a>
                             </li>
-                            <li>
-                                <a href="login.html" class="nav-link text-danger">Logout</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
-
                 <!-- Content Area -->
                 <div class="col-md-9">
                     <div class="tab-content dashboard_content">
@@ -59,12 +55,12 @@
                         <!-- Account Details Tab -->
                         <div class="tab-pane fade" id="account-details">
                             <h3 class="mb-4">Account Details</h3>
-                            <form action="POST" method="index.php?act=tai-khoan-ca-nhan">
+                            <form action="index.php?act=update-profile" method="POST">
                                 <div class="form-group">
                                     <label for="ho_ten">Họ Tên</label>
                                     <input type="text" name="ho_ten" class="form-control" value="<?= $_SESSION['user']['ho_ten'] ?>">
                                     <?php if (isset($_SESSION['errors']['ho_ten'])): ?>
-                                        <p class="text-danger"><?= $_SESSION['errors']['ten_danh_muc'] ?></p>
+                                        <p class="text-danger"><?= $_SESSION['errors']['ho_ten'] ?></p>
                                     <?php endif; ?>
                                 </div>
                                 <div class="form-group">
@@ -99,7 +95,7 @@
                                     <?php endif; ?>
                                 </div>
                                 <br>
-                                <button type="submit" name="tai-khoan-ca-nhan" class="btn btn-primary">Cập nhật profile</button>
+                                <button type="submit" name="update-profile" class="btn btn-primary">Cập nhật</button>
                             </form>
                         </div>
 

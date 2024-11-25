@@ -46,5 +46,16 @@ class Taikhoan extends connect
     return $stmt->fetchAll();
   }
 
-  
+  public function updateUser($ho_ten, $email, $so_dien_thoai,$gioi_tinh, $dia_chi){
+    $sql = 'UPDATE tai_khoans SET ho_ten= ?,email=?,so_dien_thoai=?,gioi_tinh=?,dia_chi=? WHERE id=?';
+    $stmt = $this->connect()->prepare($sql);
+    return $stmt->execute([$ho_ten, $email, $so_dien_thoai,$gioi_tinh, $dia_chi,$_SESSION['user']['id']]); 
+}
+
+public function getUserByID($id){
+  $sql = 'SELECT * FROM tai_khoans WHERE id = ? ';
+  $stmt = $this->connect()->prepare($sql);
+  $stmt->execute([$id]);
+  return $stmt -> fetch();
+}
 }
