@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Danh sách các tài khoản khách</h4>
+                        <h4 class="mb-sm-0">Danh sách Khách Hàng</h4>
                     </div>
                 </div>
             </div>
@@ -16,28 +16,9 @@
 
             <div class="row">
                 <!-- end col -->
-                <form>
                     <div class="col-xl-12 col-lg-8">
                         <div>
                             <div class="card">
-                                <div class="card-header border-0">
-                                    <div class="row g-4">
-                                        <div class="col-sm-auto">
-                                            <div>
-                                                <a href="index.php?act=them-khach" class="btn btn-secondary" id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Thêm quản trị viên </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="d-flex justify-content-sm-end">
-                                                <div class="search-box ms-2">
-                                                    <input type="text" class="form-control" id="searchProductList" placeholder="Tìm Kiếm Danh Mục...">
-                                                    <i class="ri-search-line search-icon"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
@@ -51,16 +32,12 @@
                                 </div>
                                 <!-- end card header -->
                                 <div class="card-body">
-
                                     <div class="tab-content text-muted">
                                         <div class="tab-pane active" id="productnav-all" role="tabpanel">
                                             <div id="table-product-list-all" class="table-card gridjs-border-none">
                                                 <div role="complementary" class="gridjs gridjs-container" style="width: 100%;">
                                                     <div class="gridjs-wrapper" style="height: auto;">
-
                                                         <tbody class="gridjs-tbody">
-
-
                                                             <table class="table table-hover table-striped align-middle table-nowrap mb-0">
                                                                 <thead>
                                                                     <tr>
@@ -74,57 +51,46 @@
                                                                         <th scope="col">Chức vụ</th>
                                                                         <th scope="col">Trạng thái</th>
                                                                         <th scope="col">Thao tác</th>
-
-
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-
                                                                 <tbody>
-                                                                    <?php foreach ($listKhach as $kh): ?>
+                                                                    <?php foreach ($listAdmin as $key => $ad): ?>
                                                                         <tr>
-                                                                            <td><?= $kh['id']; ?></td>
-                                                                            <td><?= $kh['ho_ten']; ?></td>
+                                                                            <td><?= $key+1; ?></td>
+                                                                            <td><?= $ad['ho_ten']; ?></td>
                                                                             <td>
-                                                                                <img src="./images/avataradmin<?= $kh['anh_dai_dien']; ?>"
+                                                                                <img src="./images/avataradmin<?= $ad['anh_dai_dien']; ?>"
                                                                                     width="100">
                                                                             </td>
-                                                                            <td><?= $kh['ngay_sinh']; ?></td>
-                                                                            <td><?= $kh['so_dien_thoai']; ?></td>
-                                                                            <td><?= $kh['gioi_tinh'] == 0 ? 'Nữ' : 'Nam'; ?></td>
-                                                                            <td><?= $kh['dia_chi']; ?></td>
-                                                                            <td><?= $kh['chuc_vu_id'] == 1 ? 'Admin' : 'Khách Hàng'; ?></td>
-                                                                            <td><?= $kh['trang_thai'] == 1 ? 'Online' : 'Offline'; ?></td>
+                                                                            <td><?= $ad['ngay_sinh']; ?></td>
+                                                                            <td><?= $ad['so_dien_thoai']; ?></td>
+                                                                            <td><?= $ad['gioi_tinh'] == 0 ? 'Nữ' : 'Nam'; ?></td>
+                                                                            <td><?= $ad['dia_chi']; ?></td>
+                                                                            <td><?= $ad['chuc_vu_id'] == 1 ? 'Admin' : 'Khách Hàng'; ?></td>
+                                                                            <td><?= $ad['trang_thai'] == 1 ? 'Đang hoạt động' : 'Bị cấm'; ?></td>
                                                                             <td>
                                                                                 <div class="form-check form-switch">
-                                                                                    <!-- Nút sửa -->
-                                                                                    <a href="index.php?act=edit-admin&id=<?= $kh['id']; ?>"
-                                                                                        class="btn btn-primary">
-                                                                                        <i class="ri-settings-fill"></i>
-                                                                                    </a>
-                                                                                    <a href="index.php?act=edit-admin&id=<?= $kh['id']; ?>"
-                                                                                        class="btn btn-primary">
-                                                                                        <i class="ri-settings-fill"></i>
-                                                                                    </a>
-                                                                                   
-                                                                                        
+                                                                                    <form action="index.php?act=cam-admin" method="post" style="display:inline;">
+                                                                                        <input type="hidden" name="id" value="<?= $ad['id']; ?>">
+                                                                                        <input type="hidden" name="trang_thai" value="<?= $ad['trang_thai'] == 1 ? 2 : 1; ?>">
+                                                                                        <button type="submit" name="cam-admin" class="btn <?= $ad['trang_thai'] == 1 ?  'btn-success' : 'btn-danger' ; ?>">
+                                                                                            <?= $ad['trang_thai'] == 1 ?   ' <i class="ri-lock-unlock-line"></i>' : '<i class="ri-forbid-2-line"></i>'; ?>
+                                                                                        </button>
+                                                                                    </form>
                                                                                 </div>
                                                                             </td>
                                                                         </tr>
                                                                     <?php endforeach; ?>
-                                                                </tbody>
-
-
+                                                        </tbody>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- end tab pane -->
                                         </div>
                                         <!-- end tab content -->
-
                                     </div>
                                     <!-- end card body -->
-
                                 </div>
                                 <!-- end card -->
                             </div>
@@ -132,7 +98,6 @@
                         <!-- end col -->
                     </div>
                     <!-- end row -->
-                </form>
             </div>
             <!-- container-fluid -->
         </div>

@@ -21,6 +21,41 @@
 
     <!-- App js -->
     <script src="admin/assets/js/app.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+        
+        <?php
+            // Kiểm tra nếu session có thông báo thành công
+            if (isset($_SESSION['success'])) {
+                echo "<script>
+                    Toastify({
+                        text: '{$_SESSION['success']}',
+                        style: {
+                            background: 'green',
+                        },
+                        duration: 3000
+                    }).showToast();
+                </script>";
+                unset($_SESSION['success']); 
+            }
+
+            // Kiểm tra nếu session có thông báo lỗi
+            if (isset($_SESSION['errors'])) {
+                echo "<script>
+                    Toastify({
+                        text: '{$_SESSION['errors']}',
+                        style: {
+                            background: 'red',
+                        },
+                        duration: 3000
+                    }).showToast();
+                </script>";
+                unset($_SESSION['errors']); 
+            }
+            ?>
+
 </body>
 
 

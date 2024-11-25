@@ -1,56 +1,50 @@
- <?php 
- require_once '../Connect/connect.php';
-  class Taikhoan extends connect {
-    public function listTaiKhoanAdmin() {
-      $sql = 'SELECT * FROM tai_khoans';
-      $stmt = $this->connect()->prepare($sql);
-      $stmt -> execute();
-      return $stmt->fetchAll();
-    }
-    public function addAddmin($ho_ten, $anh_dai_dien, $ngay_sinh , $email , $so_dien_thoai, $gioi_tinh , $dia_chi, $mat_khau, $chuc_vu_id, $trang_thai){
-      $sql = "INSERT INTO tai_khoans(ho_ten, anh_dai_dien, ngay_sinh , email , so_dien_thoai, gioi_tinh , dia_chi, mat_khau, chuc_vu_id, trang_thai) values(? ,?,?, ?, ?, ?, ? ,? ,?,?)";
-    $stmt = $this->connect()->prepare($sql);
-    return $stmt -> execute([$ho_ten, $anh_dai_dien, $ngay_sinh , $email , $so_dien_thoai, $gioi_tinh , $dia_chi, $mat_khau, $chuc_vu_id, $trang_thai]);
-    
- }
- public function editAdmin($id, $ho_ten, $anh_dai_dien, $ngay_sinh , $email , $so_dien_thoai, $gioi_tinh , $dia_chi, $mat_khau, $chuc_vu_id, $trang_thai){
-  $sql = 'UPDATE tai_khoans SET ho_ten = ?, anh_dai_dien = ? , ngay_sinh = ? , email = ? , so_dien_thoai = ? , gioi_tinh = ? , dia_chi = ? , mat_khau =? , chuc_vu_id = ? ,trang_thai = ?  WHERE id = ?';
-  $stmt = $this->connect()->prepare($sql);
-  return $stmt -> execute([ $ho_ten, $anh_dai_dien, $ngay_sinh , $email , $so_dien_thoai, $gioi_tinh , $dia_chi, $mat_khau, $chuc_vu_id, $trang_thai, $id]);
- }
-  public function detailsAdmin($id)
- {
-  $sql = 'SELECT * FROM tai_khoans WHERE id = ?';
-  $stmt = $this->connect()->prepare($sql);
-  $stmt->execute([$id]);
-  return $stmt->fetch(PDO::FETCH_ASSOC);
-}
- public function quyenAdmin($id , $trang_thai){
-  $sql = 'UPDATE tai_khoans SET trang_thai = ?  WHERE id = ?';
-  $stmt = $this->connect()->prepare($sql);
-  $stmt -> execute([  $trang_thai, $id]);
-  return true;
- }     
- public function listTaiKhoanKhach() {
-  $sql = 'SELECT * FROM tai_khoans';
-  $stmt = $this->connect()->prepare($sql);
-  $stmt -> execute();
-  return $stmt->fetchAll();
-}
-public function addKhach($ho_ten, $anh_dai_dien, $ngay_sinh , $email , $so_dien_thoai, $gioi_tinh , $dia_chi, $mat_khau, $chuc_vu_id, $trang_thai){
-  $sql = "INSERT INTO tai_khoans(ho_ten, anh_dai_dien, ngay_sinh , email , so_dien_thoai, gioi_tinh , dia_chi, mat_khau, chuc_vu_id, trang_thai) values(? ,?,?, ?, ?, ?, ? ,? ,?,?)";
-$stmt = $this->connect()->prepare($sql);
-return $stmt -> execute([$ho_ten, $anh_dai_dien, $ngay_sinh , $email , $so_dien_thoai, $gioi_tinh , $dia_chi, $mat_khau, $chuc_vu_id, $trang_thai]);
-
-}
-public function detailsKhach($id)
+<?php
+require_once '../Connect/connect.php';
+class Taikhoan extends connect
 {
- $sql = 'SELECT * FROM tai_khoans WHERE id = ?';
- $stmt = $this->connect()->prepare($sql);
- $stmt->execute([$id]);
- return $stmt->fetch(PDO::FETCH_ASSOC);
+  public function getAllTaiKhoan($chuc_vu_id){
+    $sql = 'SELECT *FROM tai_khoans WHERE chuc_vu_id = ?';
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$chuc_vu_id]);
+    return  $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function addAddmin($ho_ten, $anh_dai_dien, $email, $so_dien_thoai, $gioi_tinh, $dia_chi, $mat_khau)
+{
+    $sql = "INSERT INTO tai_khoans(ho_ten, anh_dai_dien, email, so_dien_thoai, gioi_tinh, dia_chi, mat_khau, chuc_vu_id, trang_thai) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, 1, 1)";
+    $stmt = $this->connect()->prepare($sql);
+    return $stmt->execute([$ho_ten, $anh_dai_dien, $email, $so_dien_thoai, $gioi_tinh, $dia_chi, $mat_khau]);
 }
 
-
+  public function editAdmin($id, $ho_ten, $anh_dai_dien, $email, $so_dien_thoai, $gioi_tinh, $dia_chi, $mat_khau)
+  {
+    $sql = 'UPDATE tai_khoans SET ho_ten = ?, anh_dai_dien = ? , email = ? , so_dien_thoai = ? , gioi_tinh = ? , dia_chi = ? , mat_khau =?  WHERE id = ?';
+    $stmt = $this->connect()->prepare($sql);
+    return $stmt->execute([$ho_ten, $anh_dai_dien, $email, $so_dien_thoai, $gioi_tinh, $dia_chi, $mat_khau, $id]);
   }
- ?>
+
+  public function detailsAdmin($id)
+  {
+    $sql = 'SELECT * FROM tai_khoans WHERE id = ?';
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+  
+  public function updateQuyenAdmin($id, $trang_thai)
+  {
+    $sql = 'UPDATE tai_khoans SET trang_thai = ?  WHERE id = ?';
+    $stmt = $this->connect()->prepare($sql);
+    return $stmt->execute([$trang_thai, $id]);
+  }
+  public function listTaiKhoanKhach()
+  {
+    $sql = 'SELECT * FROM tai_khoans';
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll();
+  }
+
+  
+}

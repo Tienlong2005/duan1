@@ -67,7 +67,6 @@
                                                 <div class="mb-3">
                                                     <label class="form-label">Giới tính</label>
                                                     <select class="form-select" aria-label="Default select example" name="gioi_tinh">
-                                                        <option selected>Giới tính</option>
                                                         <option value="1">Nam</option>
                                                         <option value="2">Nữ</option>
                                                     </select>
@@ -98,83 +97,29 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label class="form-label">Ngày sinh </label>
-                                                    <input type="date" class="form-control" name="ngay_sinh" placeholder="Mời nhập ngày sinh">
-                                                    <?php if(isset($_SESSION['errors']['ngay_sinh'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['ngay_sinh'] ?></p>
-                                                <?php endif; ?>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Trạng Thái</label>
-                                                    <select class="form-select" aria-label="Default select example" name="trang_thai">
-                                                        <option selected>Trạng Thái</option>
-                                                        <option value="1">Đang hoạt động</option>
-                                                        <option value="2">Bị cấm </option>
-                                                    </select>
-                                                    <?php if(isset($_SESSION['errors']['trang_thai'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['trang_thai'] ?></p>
-                                                <?php endif; ?>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Chức vụ</label>
-                                                    <select class="form-select" aria-label="Default select example" name="chuc_vu_id">
-                                                        <option selected>Chức vụ</option>
-                                                        <option value="1">Admin</option>
-                                                        <option value="2"> Khách </option>
-                                                    </select>
-                                                    <?php if(isset($_SESSION['errors']['trang_thai'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['trang_thai'] ?></p>
-                                                <?php endif; ?>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
                                                     <label class="form-label">Ảnh đại diện</label>
                                                     <div class="input-group">
                                                     <input class="form-control" name="anh_dai_dien" type="file" id="hinh_anh">
-                                                    <button class="btn btn-outline-secondary">Rest Ảnh</button>
+                                                    <button class="btn btn-outline-secondary">Reset</button>
                                                     </div>
-                                                        
-                                                    <?php if(isset($_SESSION['errors']['anh_dai_dien'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['anh_dai_dien'] ?></p>
-                                                <?php endif; ?>
                                                     </div>
                                                 </div>             
                                             </div>
-                                           
                                         </div>
-                                        <!-- end row -->
-                                    </div>
-                                    <!-- end tab-pane -->
-                                   
+                                    </div> 
                                 </div>
-                                <!-- end tab content -->
-
                             </div>
-                            <!-- end card body -->
                         </div>
-                        <!-- end card -->
                         <div class="text-end mb-3">
                             <a href="index.php?act=list-admin"class="btn btn-primary w-sm">Quay lại</a>
                             <button type="submit" name="them-admin" class="btn btn-secondary w-sm">Thêm addmin</button>
                         </div>
                     </div>
-                   
                 </div>
-                <!-- end row -->
+                <?php var_dump($_POST);die() ?>
             </form>
-
-
+            
         </div>
-        <!-- container-fluid -->
-    </div>
-    <!-- End Page-content -->
-     
+    </div>     
 </div>
 <?php include '../views/admin/layout/footer.php' ?>
