@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Danh sách các tài khoản quản trị</h4>
+                        <h4 class="mb-sm-0">Danh sách quản trị</h4>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,6 @@
 
             <div class="row">
                 <!-- end col -->
-                <form>
                     <div class="col-xl-12 col-lg-8">
                         <div>
                             <div class="card">
@@ -25,14 +24,6 @@
                                         <div class="col-sm-auto">
                                             <div>
                                                 <a href="index.php?act=them-admin" class="btn btn-secondary" id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Thêm quản trị viên </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="d-flex justify-content-sm-end">
-                                                <div class="search-box ms-2">
-                                                    <input type="text" class="form-control" id="searchProductList" placeholder="Tìm Kiếm Danh Mục...">
-                                                    <i class="ri-search-line search-icon"></i>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -64,10 +55,9 @@
                                                             <table class="table table-hover table-striped align-middle table-nowrap mb-0">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th scope="col">Id</th>
+                                                                        <th scope="col">STT</th>
                                                                         <th scope="col">Họ và tên </th>
                                                                         <th scope="col">Ảnh Đại Diện </th>
-                                                                        <th scope="col">Ngày sinh</th>
                                                                         <th scope="col">Số Điện thoại</th>
                                                                         <th scope="col">Giới tính</th>
                                                                         <th scope="col">Địa chỉ</th>
@@ -81,15 +71,11 @@
                                                                 <tbody>
 
                                                                 <tbody>
-                                                                    <?php foreach ($listAdmin as $ad): ?>
+                                                                    <?php foreach ($listAdmin as $key => $ad): ?>
                                                                         <tr>
-                                                                            <td><?= $ad['id']; ?></td>
+                                                                            <td><?= $key+1 ?></td>
                                                                             <td><?= $ad['ho_ten']; ?></td>
-                                                                            <td>
-                                                                                <img src="./images/avataradmin<?= $ad['anh_dai_dien']; ?>"
-                                                                                    width="100">
-                                                                            </td>
-                                                                            <td><?= $ad['ngay_sinh']; ?></td>
+                                                                            <td><img src="./images/avataradmin<?= $ad['anh_dai_dien']; ?>"width="100"></td>
                                                                             <td><?= $ad['so_dien_thoai']; ?></td>
                                                                             <td><?= $ad['gioi_tinh'] == 0 ? 'Nữ' : 'Nam'; ?></td>
                                                                             <td><?= $ad['dia_chi']; ?></td>
@@ -103,7 +89,7 @@
                                                                                         <i class="ri-settings-fill"></i>
                                                                                     </a>
 
-                                                                                   
+
                                                                                     <form action="index.php?act=cam-admin" method="post" style="display:inline;">
                                                                                         <input type="hidden" name="id" value="<?= $ad['id']; ?>">
                                                                                         <input type="hidden" name="trang_thai" value="<?= $ad['trang_thai'] == 1 ? 2 : 1; ?>">
@@ -135,7 +121,6 @@
                         <!-- end col -->
                     </div>
                     <!-- end row -->
-                </form>
             </div>
             <!-- container-fluid -->
         </div>
