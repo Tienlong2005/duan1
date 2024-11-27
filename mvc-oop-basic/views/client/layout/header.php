@@ -72,7 +72,7 @@
                                         <ul class="dropdown_links">
                                             <li><a href="?act=check-out">Thanh Toán</a></li>
                                             <li><a href="?act=profiles">Tài Khoản</a></li>
-                                            <li><a href="?act=cart">Giỏ Hàng</a></li>
+                                            <li><a href="?act=gio-hang">Giỏ Hàng</a></li>
                                             <li>
                                                 <form action="?act=dang-xuat" method="post">
                                                     <button type="submit" class="btn btn-danger btn-sm">Logout</button>
