@@ -7,6 +7,7 @@ require_once '../controllers/admin/DonHangAdminController.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/admin/ProfileController.php';
 require_once '../controllers/client/SanPhamController.php';
+require_once '../controllers/client/CartController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : '';
 $DanhmucAdmin = new DanhMucAdminController();
 $SanphamAdmin = new SanPhamAdminController();
@@ -15,6 +16,7 @@ $DonHangAdmin = new DonHangAdminController();
 $AuthClient = new AuthController();
 $Profile = new ProfileController();
 $SanPhamClient = new SanPhamController();
+$GioHang = new CartController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
@@ -139,6 +141,16 @@ switch ($action) {
     case 'gio-hang':
         include '../views/client/cart/cart.php';
         break;
+        case 'them-gio-hang':
+            $GioHang->addToCart();
+            break;
+        case 'cap-nhat-gio-hang':
+            $GioHang->updateCart();
+            break;
+    
+        case 'xoa-san-pham':
+            $Cart->deleteCartItem();
+            break;
     case 'kiem-tra':
         include '../views/client/cart/checkOut.php';
         break;
