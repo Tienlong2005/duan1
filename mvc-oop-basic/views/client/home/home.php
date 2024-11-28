@@ -1,28 +1,47 @@
 <?php include '../views/client/layout/header.php' ?>
-<section class="slider_section color_scheme_2  mb-42">
+<section class="slider_section color_scheme_2 mb-42">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
-                <div class="slider_area slider_three owl-carousel">
-                    <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/slider7.jpg">
-                        <div class="slider_content">
-                            <h2>GM 10 & 12</h2>
-                            <h1>Bolt Rear Disc Brake Conversions</h1>
-                            <a class="button" href="shop.html">shopping now</a>
-                        </div>
-                    </div>
+                <!-- Slider với một ảnh duy nhất -->
+                <div class="slider">
+                    <img id="slideImage" src="client/assets/img/slider/slide13.jpg" >
                 </div>
             </div>
         </div>
     </div>
+<script>
+    let images = [
+    'client/assets/img/slider/slide13.jpg',
+    'client/assets/img/slider/slide15.jpg',
+    'client/assets/img/slider/slide21.jpg'
+];
 
+let currentIndex = 0;
+let slideImage = document.getElementById('slideImage');
+
+
+function changeImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    
+    slideImage.style.opacity = 0;
+
+    setTimeout(() => {
+        slideImage.src = images[currentIndex];
+        slideImage.style.opacity = 1;
+    }, 1000);
+}
+
+// Chạy hàm đổi ảnh mỗi 3 giây
+setInterval(changeImage, 3000);
+</script>
 </section>
 <section class="product_area mb-50">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section_title">
-                    <h2><span> <strong>Giầy</strong>Bóng Đá</span></h2>
+                    <h2><span> <strong>Giày</strong>Bóng Đá</span></h2>
                 </div>
             </div>
         </div>
