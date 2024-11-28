@@ -7,7 +7,6 @@ require_once '../controllers/admin/DonHangAdminController.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/admin/ProfileController.php';
 require_once '../controllers/client/SanPhamController.php';
-require_once '../controllers/client/CartController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : '';
 $DanhmucAdmin = new DanhMucAdminController();
 $SanphamAdmin = new SanPhamAdminController();
@@ -16,7 +15,6 @@ $DonHangAdmin = new DonHangAdminController();
 $AuthClient = new AuthController();
 $Profile = new ProfileController();
 $SanPhamClient = new SanPhamController();
-$GioHang = new CartController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';

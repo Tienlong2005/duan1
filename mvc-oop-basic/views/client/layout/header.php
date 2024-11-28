@@ -92,7 +92,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-3 col-md-6">
                         <div class="logo">
-                            <a href="index.php?act=/"><img src="client/assets/img/logo/g1.png" alt="" style="height: 150px; " width="200" ></a>
+                            <a href="index.php?act=trang-chu"><img src="client/assets/img/logo/g1.png" alt="" style="height: 150px; " width="200" ></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
@@ -100,7 +100,7 @@
                             <div class="search-container">
                                 <form action="#">
                                     <div class="search_box">
-                                        <input placeholder="Search entire store here ..." type="text">
+                                        <input placeholder="Nhập thứ bạn muốn tìm vào đây..." type="text">
                                         <button type="submit"><i class="ion-ios-search-strong"></i></button>
                                     </div>
                                 </form>
