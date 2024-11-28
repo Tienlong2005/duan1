@@ -28,7 +28,7 @@ class AuthController extends Auth
             $resgister = $this->register($_POST['name'], $_POST['email'], $_POST['password']);
             if ($resgister) {
                 $_SESSION['success'] = 'Tạo tài khoản thành công.Vui lòng đăng nhập';
-                header('Location:?act=signin');
+                header('Location:?act=dang-nhap');
                 exit();
             } else {
                 $_SESSION['error'] = 'Tạo tài khoản không thành công';

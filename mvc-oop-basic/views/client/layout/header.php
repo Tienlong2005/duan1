@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Shop Quần Áo Đá Bóng G1</title>
+    <title>Football G1-Thể thao dành cho bạn  </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -72,7 +72,7 @@
                                         <ul class="dropdown_links">
                                             <li><a href="?act=check-out">Thanh Toán</a></li>
                                             <li><a href="?act=profiles">Tài Khoản</a></li>
-                                            <li><a href="?act=gio-hang">Giỏ Hàng</a></li>
+                                            <li><a href="?act=cart">Giỏ Hàng</a></li>
                                             <li>
                                                 <form action="?act=dang-xuat" method="post">
                                                     <button type="submit" class="btn btn-danger btn-sm">Logout</button>
@@ -92,7 +92,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-3 col-md-6">
                         <div class="logo">
-                            <a href="index.php?act=/"><img src="client/assets/img/logo/logo.png" alt=""></a>
+                            <a href="index.php?act=/"><img src="client/assets/img/logo/g1.png" alt="" style="height: 150px; " width="200" ></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">

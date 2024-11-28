@@ -75,7 +75,7 @@
                                                                         <tr>
                                                                             <td><?= $key+1 ?></td>
                                                                             <td><?= $ad['ho_ten']; ?></td>
-                                                                            <td><img src="./images/avataradmin<?= $ad['anh_dai_dien']; ?>"width="100"></td>
+                                                                            <td><img src="./images/avataradmin/<?= $ad['anh_dai_dien']; ?>"width="100"></td>
                                                                             <td><?= $ad['so_dien_thoai']; ?></td>
                                                                             <td><?= $ad['gioi_tinh'] == 0 ? 'Nữ' : 'Nam'; ?></td>
                                                                             <td><?= $ad['dia_chi']; ?></td>
