@@ -4,12 +4,35 @@
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="slider_area slider_three owl-carousel">
-                    <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/slider7.jpg">
-                        <div class="slider_content">
-                            <h2>GM 10 & 12</h2>
-                            <h1>Bolt Rear Disc Brake Conversions</h1>
-                            <a class="button" href="shop.html">shopping now</a>
-                        </div>
+                    <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/image1.png" >
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="slider_area slider_three owl-carousel">
+                    <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/image2.png" >
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="slider_area slider_three owl-carousel">
+                    <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/image3.png" >
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="slider_area slider_three owl-carousel">
+                    <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/image4.png" >
+                        
                     </div>
                 </div>
             </div>
@@ -22,7 +45,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section_title">
-                    <h2><span> <strong>Giầy</strong>Bóng Đá</span></h2>
+                    <h2><span> <strong>Giày</strong>Bóng Đá</span></h2>
                 </div>
             </div>
         </div>
@@ -71,7 +94,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section_title">
-                    <h2><span> <strong>Giầy</strong>Bóng Đá</span></h2>
+                    <h2><span> <strong>Quần áo</strong>Bóng Đá</span></h2>
                 </div>
             </div>
         </div>
