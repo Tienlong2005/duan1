@@ -139,6 +139,16 @@ switch ($action) {
     case 'gio-hang':
         include '../views/client/cart/cart.php';
         break;
+        case 'them-gio-hang':
+            $GioHang->addToCart();
+            break;
+        case 'cap-nhat-gio-hang':
+            $GioHang->updateCart();
+            break;
+    
+        case 'xoa-san-pham':
+            $Cart->deleteCartItem();
+            break;
     case 'kiem-tra':
         include '../views/client/cart/checkOut.php';
         break;

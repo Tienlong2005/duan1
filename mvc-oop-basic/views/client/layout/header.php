@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="client/assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="client/assets/img/logo2.png">
 
     <!-- CSS 
     ========================= -->
@@ -70,8 +70,8 @@
                                             <i class="ion-ios-arrow-down"></i>
                                         </a>
                                         <ul class="dropdown_links">
-                                            <li><a href="?act=kiem-tra">Thanh Toán</a></li>
-                                            <li><a href="?act=tai-khoan-ca-nhan">Tài Khoản</a></li>
+                                            <li><a href="?act=check-out">Thanh Toán</a></li>
+                                            <li><a href="?act=profiles">Tài Khoản</a></li>
                                             <li><a href="?act=cart">Giỏ Hàng</a></li>
                                             <li>
                                                 <form action="?act=dang-xuat" method="post">
@@ -92,7 +92,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-3 col-md-6">
                         <div class="logo">
-                            <a href="index.php?act=/"><img src="client/assets/img/logo/g1.png" alt="" style="height: 150px; " width="200" ></a>
+                            <a href="index.php?act=trang-chu"><img src="client/assets/img/logo/g1.png" alt="" style="height: 150px; " width="200" ></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
@@ -100,7 +100,7 @@
                             <div class="search-container">
                                 <form action="#">
                                     <div class="search_box">
-                                        <input placeholder="Search entire store here ..." type="text">
+                                        <input placeholder="Nhập thứ bạn muốn tìm vào đây..." type="text">
                                         <button type="submit"><i class="ion-ios-search-strong"></i></button>
                                     </div>
                                 </form>

@@ -1,44 +1,41 @@
 <?php include '../views/client/layout/header.php' ?>
-<section class="slider_section color_scheme_2  mb-42">
+<section class="slider_section color_scheme_2 mb-42">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
-                <div class="slider_area slider_three owl-carousel">
-                    <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/image1.png" >
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="slider_area slider_three owl-carousel">
-                    <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/image2.png" >
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="slider_area slider_three owl-carousel">
-                    <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/image3.png" >
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="slider_area slider_three owl-carousel">
-                    <div class="single_slider d-flex align-items-center" data-bgimg="client/assets/img/slider/image4.png" >
-                        
-                    </div>
+                <!-- Slider với một ảnh duy nhất -->
+                <div class="slider">
+                    <img id="slideImage" src="client/assets/img/slider/slide13.jpg">
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        let images = [
+            'client/assets/img/slider/slide13.jpg',
+            'client/assets/img/slider/slide33.png',
+            'client/assets/img/slider/slide21.jpg'
+        ];
 
+
+        let currentIndex = 0;
+        let slideImage = document.getElementById('slideImage');
+
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+
+            slideImage.style.opacity = 0;
+
+
+            setTimeout(() => {
+                slideImage.src = images[currentIndex];
+                slideImage.style.opacity = 1;
+            }, 1000);
+        }
+
+        setInterval(changeImage, 3000);
+    </script>
 </section>
 <section class="product_area mb-50">
     <div class="container">
@@ -59,7 +56,7 @@
                             </div>
                             <div class="product_thumb">
                                 <a class="primary_img" href="?act=detail-pro">
-                                <img src="./images/category<?= $sp['hinh_anh']; ?>" width="100"></td>
+                                    <img src="./images/category<?= $sp['hinh_anh']; ?>" width="100"></td>
                                 </a>
                             </div>
                             <div class="product_content">
@@ -111,7 +108,7 @@
                             </div>
                             <div class="product_thumb">
                                 <a class="primary_img" href="?act=detail-pro">
-                                <img src="./images/category<?= $sp['hinh_anh']; ?>" width="100"></td>
+                                    <img src="./images/category<?= $sp['hinh_anh']; ?>" width="100"></td>
                                 </a>
                             </div>
                             <div class="product_content">
