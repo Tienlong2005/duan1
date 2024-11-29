@@ -1,215 +1,179 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en" data-layout="semibox" data-sidebar-visibility="show" data-topbar="light" data-sidebar="light" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
 
-<!-- Mirrored from htmldemo.net/autima/autima/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Nov 2024 09:07:48 GMT -->
+<!-- Mirrored from themesbrand.com/velzon/html/corporate/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Nov 2024 14:32:41 GMT -->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Football G1-Thể thao dành cho bạn  </title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="client/assets/img/logo2.png">
 
-    <!-- CSS 
-    ========================= -->
-    <!--bootstrap min css-->
-    <link rel="stylesheet" href="client/assets/css/bootstrap.min.css">
-    <!--owl carousel min css-->
-    <link rel="stylesheet" href="client/assets/css/owl.carousel.min.css">
-    <!--slick min css-->
-    <link rel="stylesheet" href="client/assets/css/slick.css">
-    <!--magnific popup min css-->
-    <link rel="stylesheet" href="client/assets/css/magnific-popup.css">
-    <!--font awesome css-->
-    <link rel="stylesheet" href="client/assets/css/font.awesome.css">
-    <!--ionicons min css-->
-    <link rel="stylesheet" href="client/assets/css/ionicons.min.css">
-    <!--animate css-->
-    <link rel="stylesheet" href="client/assets/css/animate.css">
-    <!--jquery ui min css-->
-    <link rel="stylesheet" href="client/assets/css/jquery-ui.min.css">
-    <!--slinky menu css-->
-    <link rel="stylesheet" href="client/assets/css/slinky.menu.css">
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="client/assets/css/plugins.css">
+    <meta charset="utf-8" />
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="admin/assets/images/favicon.ico">
 
-    <!-- Main Style CSS -->
-    <link rel="stylesheet" href="client/assets/css/style.css">
+    <!-- jsvectormap css -->
+    <link href="admin/assets/libs/jsvectormap/jsvectormap.min.css" rel="stylesheet" type="text/css" />
 
-    <!--modernizr min js here-->
-    <script src="client/assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <!--Swiper slider css-->
+    <link href="admin/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Layout config Js -->
+    <script src="admin/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="admin/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="admin/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="admin/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="admin/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 
 <body>
-    <header class="header_area">
-        <!--header top start-->
-        <div class="header_top">
-            <div class="container">
-                <div class="top_inner">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-6">
-                            <!-- Có thể thêm nội dung nếu cần -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="index.php?act=admin" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="admin/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="admin/assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="top_right text-end">
-                                <ul>
-                                    <li class="top_links">
-                                        <a href="#">
-                                            <i class="ion-android-person"></i>
-                                            <?php
-                                            if (isset($_SESSION['user'])) {
-                                                echo ($_SESSION['user']['ho_ten']);
-                                            } else {
-                                                echo 'Khách';
-                                            }
-                                            ?>
-                                            <i class="ion-ios-arrow-down"></i>
-                                        </a>
-                                        <ul class="dropdown_links">
-                                            <li><a href="?act=check-out">Thanh Toán</a></li>
-                                            <li><a href="?act=profiles">Tài Khoản</a></li>
-                                            <li><a href="?act=cart">Giỏ Hàng</a></li>
-                                            <li>
-                                                <form action="?act=dang-xuat" method="post">
-                                                    <button type="submit" class="btn btn-danger btn-sm">Logout</button>
-                                                </form>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+
+                        <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="header_middle">
-            <div class="container">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="logo">
-                            <a href="index.php?act=trang-chu"><img src="client/assets/img/logo/g1.png" alt="" style="height: 150px; " width="200" ></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="middel_right d-flex justify-content-center">
-                            <div class="search-container">
-                                <form action="#">
-                                    <div class="search_box">
-                                        <input placeholder="Nhập thứ bạn muốn tìm vào đây..." type="text">
-                                        <button type="submit"><i class="ion-ios-search-strong"></i></button>
+
+                    <div class="d-flex align-items-center">
+
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <!-- Additional content can go here -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="header_bottom sticky-header">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12">
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!--header bottom end-->
-    </header>
-    <!--header area end-->
-
-    <!--Offcanvas menu area start-->
-    <div class="off_canvars_overlay"></div>
-    <div class="Offcanvas_menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="canvas_open">
-                        <span>MENU</span>
-                        <a href="javascript:void(0)"><i class="ion-navicon"></i></a>
-                    </div>
-                    <div class="Offcanvas_menu_wrapper">
-
-                        <div class="canvas_close">
-                            <a href="#"><i class="ion-android-close"></i></a>
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
                         </div>
-                        <div class="top_right text-end">
-                            <ul>
-                                <li class="top_links"><a href="#"><i class="ion-android-person"></i> My Account<i class="ion-ios-arrow-down"></i></a>
-                                    <ul class="dropdown_links">
-                                        <li><a href="checkout.html">Checkout </a></li>
-                                        <li><a href="my-account.html">My Account </a></li>
-                                        <li><a href="?act=cart">Shopping Cart</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="search-container">
-                            <form action="#">
-                                <div class="search_box">
-                                    <input placeholder="Search entire store here ..." type="text">
-                                    <button type="submit"><i class="ion-ios-search-strong"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                        <div id="menu" class="text-left ">
-                            <ul class="offcanvas_main_menu">
-                                <li class="menu-item-has-children">
-                                    <a href="#">Home</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index.html">Home 1</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">Shop</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Shop Layouts</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="shop.html">shop</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">other Pages</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="cart.html">cart</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Product Types</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="product-details.html">product details</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html">blog</a></li>
-                                    </ul>
 
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">pages </a>
-                                    <ul class="sub-menu">
-                                        <li><a href="about.html">About Us</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user" src="admin/assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                    <span class="text-start ms-xl-2">
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="?act=admin-user"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
+                                <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="index.php?act=admin" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="admin/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="admin/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="index.html" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="admin/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="admin/assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+            <div id="scrollbar">
+                <div class="container-fluid">
 
-    </div>
+                    <div id="two-column-menu">
+                    </div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="index.php?act=admin">
+                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Thống Kê</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="index.php?act=danh-muc">
+                                <i class="ri-xbox-fill"></i> <span data-key="t-dashboards">Danh Mục</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="index.php?act=san-pham">
+                                <i class="ri-money-cny-box-line"></i> <span data-key="t-dashboards">Sản Phẩm</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="index.php?act=don-hang">
+                                <i class="ri-article-line"></i> <span data-key="t-dashboards">Đơn Hàng</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="index.php?act=tai-khoan">
+                                <i class="ri-account-circle-line"></i> <span data-key="t-dashboards">Tài Khoản</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <div class="vertical-overlay"></div>
