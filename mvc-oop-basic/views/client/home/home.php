@@ -63,10 +63,10 @@
                                 <div class="product_footer d-flex align-items-center">
                                     <div class="price_box">
                                         <?php if (!empty($sp['gia_khuyen_mai'])): ?>
-                                            <span class="regular_price" style="text-decoration: line-through;"><?= $sp['gia_san_pham'] ?> $</span>
-                                            <span class="sale_price"><?= $sp['gia_khuyen_mai'] ?> $</span>
+                                            <span class="regular_price" style="text-decoration: line-through;"><?= $sp['gia_san_pham'] ?> Đ</span>
+                                            <span class="sale_price"><?= $sp['gia_khuyen_mai'] ?> Đ</span>
                                         <?php else: ?>
-                                            <span class="regular_price"><?= $sp['gia_san_pham'] ?> $</span>
+                                            <span class="regular_price"><?= $sp['gia_san_pham'] ?> Đ</span>
                                         <?php endif; ?>
                                     </div>
                                 </div>

@@ -129,7 +129,7 @@ switch ($action) {
             break;
         case 'dang-xuat':
             $AuthClient->logout();
-    case 'chi-tiet-gio-hang':
+    case 'chi-tiet-san-pham':
         include '../views/client/product/detail.php';
         break;
 
