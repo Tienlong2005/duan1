@@ -8,51 +8,52 @@
                             <a href="#"><img src="client/client/client/assets/img/logo/logo.png" alt=""></a>
                         </div>
                         <div class="footer_contact">
-                            <p>Chúng tôi là một nhóm gồm các nhà thiết kế và phát triển trang Web</p>
-                            <p><span>Địa Chỉ</span>Nam Từ Liêm,Hà Nội,Việt Nam</p>
-                            <p><span>Cần Hỗ Trợ</span>Liên Hệ: <a href="tel:1-800-345-6789">19001006</a></p>
+                            <p>We are a team of designers and developers that
+                                create high quality Magento, Prestashop, Opencart...</p>
+                            <p><span>Address</span> 4710-4890 Breckinridge St, UK Burlington, VT 05401</p>
+                            <p><span>Need Help?</span>Call: <a href="tel:1-800-345-6789">1-800-345-6789</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="widgets_container widget_menu">
-                        <h3>Thông Tin</h3>
+                        <h3>Information</h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="about.html">Về Chúng Tôi</a></li>
-                                <li><a href="#">Thông Tin Giao Hàng</a></li>
-                                <li><a href="privacy-policy.html">Chính Sách bảo Mật</a></li>
-                                <li><a href="coming-soon.html">Sắp Ra Mắt</a></li>
-                                <li><a href="#">Dịch Vụ Khách Hàng</a></li>
-                                <li><a href="#">Quay Lại</a></li>
-                                <li><a href="#">Giấy chứng nhận quà tặng</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="privacy-policy.html">privacy policy</a></li>
+                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#">Gift Certificates</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="widgets_container widget_menu">
-                        <h3>Tiện ích bổ sung</h3>
+                        <h3>Extras</h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="#">Quay Lại</a></li>
-                                <li><a href="#">Lịch Sử Đặt Hàng</a></li>
-                                <li><a href="wishlist.html">Danh sách mong muốn</a></li>
-                                <li><a href="#">Bản tin</a></li>
-                                <li><a href="#">Liên Kết</a></li>
-                                <li><a href="#">Đặc Biệt</a></li>
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#">Order History</a></li>
+                                <li><a href="wishlist.html">Wish List</a></li>
+                                <li><a href="#">Newsletter</a></li>
+                                <li><a href="#">Affiliate</a></li>
+                                <li><a href="#">Specials</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="widgets_container">
-                        <h3>Đăng Ký Email Để Nhận Được Thông Báo</h3>
-                        <p>Chúng tôi sẽ không chia sẻ Email của bạn cho bên Thứ ba.</p>
+                        <h3>Newsletter Subscribe</h3>
+                        <p>We’ll never share your email address with a third-party.</p>
                         <div class="subscribe_form">
                             <form id="mc-form" class="mc-form footer-newsletter">
-                                <input id="mc-email" type="email" autocomplete="off" placeholder="Nhập Email của bạn vào đây..." />
-                                <button id="mc-submit">Đăng Ký</button>
+                                <input id="mc-email" type="email" autocomplete="off" placeholder="Enter you email address here..." />
+                                <button id="mc-submit">Subscribe</button>
                             </form>
                             <!-- mailchimp-alerts Start -->
                             <div class="mailchimp-alerts text-centre">
@@ -69,7 +70,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="copyright_area">
-                        <p>Copyright &copy; 2024 <a href="index.php?act=trang-chu">-G1 </a>-Thể Thao Dành Cho Bạn.</p>
+                        <p>Copyright &copy; 2021 <a href="#">Autima</a> All Right Reserved.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
