@@ -4,7 +4,7 @@ class Connect {
         $serverName = 'localhost';
         $userName = 'root';
         $password = '';
-        $myDB = 'duan1-nhom1';
+        $myDB = 'duan1';
         
         try {
             // Fixing the connection string to use double quotes for variable interpolation
