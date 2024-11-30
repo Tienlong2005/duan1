@@ -93,7 +93,7 @@
                                                 <div class="mb-3">
                                                     <label class="form-label">Trạng Thái</label>
                                                     <select class="form-select" aria-label="Default select example" name="trang_thai">
-                                                        <option selected>Trạng Thái</option>
+                                                        <option value="0">Trạng Thái</option>
                                                         <option value="1" <?=$getSanPham['trang_thai'] ==1 ? 'selected' : ""?>>Còn Hàng</option>
                                                         <option value="2"><?=$getSanPham['trang_thai'] ==2 ? 'selected' : ""?>>Hết hàng</option>
                                                     </select>
@@ -109,7 +109,7 @@
                                                     <label class="form-label">Thêm Ảnh</label>
                                                     <div class="input-group">
                                                     
-                                                    <input type="hidden" name="old_hinh_anh" value="<?=$getSanPham['ngay_nhap'];?>">
+                                                    <input type="hidden" name="old_hinh_anh" value="<?=$getSanPham['hinh_anh'];?>">
                                                     <input class="form-control" name="hinh_anh" type="file" id="hinh_anh">
                                                     <button class="btn btn-outline-secondary">Chọn ảnh</button>
                                                     </div>

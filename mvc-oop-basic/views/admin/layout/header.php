@@ -30,6 +30,8 @@
     <link href="admin/assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="admin/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 
@@ -96,10 +98,14 @@
                                 <span class="d-flex align-items-center">
                                     <img class="rounded-circle header-profile-user" src="admin/assets/images/users/avatar-1.jpg" alt="Header Avatar">
                                     <span class="text-start ms-xl-2">
-                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Admin</span>
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
                                     </span>
                                 </span>
                             </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="?act=profile"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Thông Tin Cá Nhân</span></a>
+                                <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Đăng Xuất</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,7 +120,7 @@
                         <img src="admin/assets/images/logo-sm.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="admin/assets/images/logo-dark.png" alt="" height="17">
+                        <img src="admin/assets/images/g1.png" alt="" height="150">
                     </span>
                 </a>
                 <!-- Light Logo-->
@@ -123,7 +129,7 @@
                         <img src="admin/assets/images/logo-sm.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="admin/assets/images/logo-light.png" alt="" height="17">
+                        <img src="admin/assets/images/g1.png" alt="" height="150">
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -139,7 +145,7 @@
                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="index.php?act=admin">
-                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Trang Thống Kê</span>
+                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Thống Kê</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -147,44 +153,25 @@
                                 <i class="ri-xbox-fill"></i> <span data-key="t-dashboards">Danh Mục</span>
                             </a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarDashboards">
-                                <i class="ri-color-filter-line"></i> <span data-key="t-dashboards">Màu Sắc Kích Thước</span>
+                            <a class="nav-link menu-link" href="index.php?act=san-pham">
+                                <i class="ri-money-cny-box-line"></i> <span data-key="t-dashboards">Sản Phẩm</span>
                             </a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="index.php?act=product">
-                                <i class="ri-instance-fill"></i> <span data-key="t-dashboards">Sản Phẩm</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarDashboards">
+                            <a class="nav-link menu-link" href="index.php?act=don-hang">
                                 <i class="ri-article-line"></i> <span data-key="t-dashboards">Đơn Hàng</span>
                             </a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarDashboards">
-                                <i class="ri-coupon-line"></i> <span data-key="t-dashboards">Vouchers</span>
+                            <a class="nav-link menu-link" href="index.php?act=list-admin">
+                                <i class="ri-account-circle-line"></i> <span data-key="t-dashboards">Tài Khoản Admin</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
-                                <i class="ri-account-circle-line"></i> <span data-key="t-authentication">Tài Khoản</span>
+                            <a class="nav-link menu-link" href="index.php?act=list-khach-hang">
+                                <i class="ri-account-circle-line"></i> <span data-key="t-dashboards">Tài Khoản Khách Hàng</span>
                             </a>
-                            <div class="collapse menu-dropdown" id="sidebarAuth">
-                                <ul class="nav nav-sm flex-column">
-                                    <li>
-                                        <a href="#sidebarSignIn" class="nav-link">User</a>
-                                    </li>
-                                    <li>
-                                        <a href="#sidebarSignIn" class="nav-link">Admin</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                     </ul>
                 </div>

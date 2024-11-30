@@ -3,10 +3,20 @@ session_start();
 require_once '../controllers/admin/DanhMucAdminController.php';
 require_once '../controllers/admin/SanPhamAdminController.php';
 require_once '../controllers/admin/TaiKhoanAdminController.php';
+require_once '../controllers/admin/DonHangAdminController.php';
+require_once '../controllers/client/AuthController.php';
+require_once '../controllers/admin/ProfileController.php';
+require_once '../controllers/client/SanPhamController.php';
+require_once '../controllers/client/CartController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : '';
 $DanhmucAdmin = new DanhMucAdminController();
 $SanphamAdmin = new SanPhamAdminController();
 $TaikhoanAdmin = new TaiKhoanAdminController();
+$DonHangAdmin = new DonHangAdminController();
+$AuthClient = new AuthController();
+$Profile = new ProfileController();
+$SanPhamClient = new SanPhamController();
+$GioHang = new CartController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
@@ -37,6 +47,7 @@ switch ($action) {
     case 'danh-muc':
         $DanhmucAdmin->index();
         break;
+
     case 'xoa-danh-muc':
         $id = isset($_GET['id']) ? $_GET['id'] : 0;
         if ($id) {
@@ -58,45 +69,97 @@ switch ($action) {
             header('Location: index.php?act=danh-muc');
         }
         break;
-        case 'edit-admin':
+    case 'list-admin':
+        $TaikhoanAdmin->danhSachAdmin();
+        break;
+    case 'list-khach-hang':
+        $TaikhoanAdmin->danhSachKhachHang();
+        break;
+
+    case 'them-admin':
+        $TaikhoanAdmin->createAddmin();
+        break;
+    case 'edit-admin':
         $id = isset($_GET['id']) ? $_GET['id'] : 0;
         if ($id) {
-            $TaikhoanAdmin->suaAdmin($id); // Gọi phương thức sửa danh mục
+            $TaikhoanAdmin->suaAdmin($id);
         } else {
             $_SESSION['errors'] = 'ID không hợp lệ';
             header('Location: index.php?act=list-admin');
         }
         break;
-        case 'list-admin':
-            $TaikhoanAdmin->index();
-            break;
-            case 'them-admin':
-                $TaikhoanAdmin->createAddmin();
-                break;
-    case 'trang-chu':
-        include '../views/client/home/index.php';
+
+    case 'cam-admin':
+        $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
+        $trang_thai = isset($_POST['trang_thai']) ? (int)$_POST['trang_thai'] : null;
+
+        if ($id && in_array($trang_thai, [1, 2])) {
+            $TaikhoanAdmin->quyenAdmin($id, $trang_thai);
+            $_SESSION['success'] = 'Cập nhật trạng thái thành công!';
+        } else {
+            $_SESSION['errors'] = 'ID hoặc trạng thái không hợp lệ';
+        }
+        header('Location: index.php?act=list-admin');
+        exit();
         break;
 
-    case 'dang-ki':
-        include '../views/client/home/register.php';
+    case 'don-hang':
+        $DonHangAdmin->index();
+        break;
+    case 'chi-tiet-don-hang':
+        $DonHangAdmin->detailDonHang();
+        break;
+    case 'edit-don-hang':
+        $DonHangAdmin->getIdDonHang();
+        break;
+    case "update-don-hang":
+        $DonHangAdmin->updateDonHang();
+    case 'trang-chu':
+        $SanPhamClient->showSanPhamClient();
+        break;
+
+    case 'dang-ky':
+        $AuthClient->resgister();
         break;
 
     case 'dang-nhap':
-        include '../views/client/home/login.php';
+        $AuthClient->logins();
         break;
 
-    case 'detail-pro':
-        include '../views/client/home/detail.php';
+    case 'update-profile':
+        $Profile->updateProfie();
+        break;
+    case 'dang-xuat':
+        $AuthClient->logout();
+    case 'chi-tiet-san-pham':
+        include '../views/client/product/detail.php';
         break;
 
     case 'tai-khoan-ca-nhan':
-        include '../views/admin/taikhoan/cannhan/editcanhan.php';
+        include '../views/client/profile/profile.php';
         break;
     case 'cart':
-        include '../views/client/home/cart.php';
+        $GioHang->index();
         break;
+
+    case 'addToCart':
+        $GioHang->addToCart();
+        break;
+
+    case 'delete-cart':
+        $GioHang->deleteCartItem();
+        break;
+
+    case 'update-cart':
+        $GioHang->updateCart();
+        break;
+
     case 'check-out':
-        include '../views/client/home/checkOut.php';
+        $GioHang->checkOut();
+        break;
+
+    case 'payment-processing':
+        $GioHang->postCheckOut();
         break;
     default:
 }

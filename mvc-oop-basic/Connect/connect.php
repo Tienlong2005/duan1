@@ -18,6 +18,5 @@ class Connect {
             echo "Kết nối thất bại: " . $th->getMessage();
         }
     }
-   
 }
 ?>

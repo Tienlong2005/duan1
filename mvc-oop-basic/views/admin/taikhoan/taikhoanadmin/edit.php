@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Trang Sửa Quản trị</h4>
+                        <h4 class="mb-sm-0">Trang Sửa Admin</h4>
 
                     </div>
                 </div>
@@ -16,7 +16,7 @@
             <!-- end page title -->
           
 
-            <form action="index.php?act=edit-admin&id=<?=$getAdmin['id'];?>" method="post" enctype="multipart/form-data">
+            <form action="index.php?act=edit-admin&id=<?= $getAdmin['id']; ?>" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-lg-12">
 
@@ -25,7 +25,7 @@
                                 <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link active" data-bs-toggle="tab" href="#addproduct-general-info" role="tab" aria-selected="true">
-                                            Bảng Update Quản trị
+                                            Bảng sửa thông tin Admin
                                         </a>
                                     </li>
                                 </ul>
@@ -38,93 +38,79 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label class="form-label">Họ và tên</label>
-                                                    <input type="text" class="form-control" name="ho_ten" value="<?=$getAdmin['ho_ten'];?>" placeholder="Nhập họ và tên">
-                                                    <?php if(isset($_SESSION['errors']['ten_san_pham'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['ten'] ?></p>
+                                                    <input type="text" class="form-control" name="ho_ten" value="<?=$getAdmin['ho_ten']; ?>" placeholder="Nhập tên ">
+                                                    <?php if(isset($_SESSION['errors']['ho_ten'])): ?>
+                                                    <p class="text-danger"><?= $_SESSION['errors']['ho_ten'] ?></p>
                                                 <?php endif; ?>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label class="form-label">Danh Mục</label>
-                                                    <select class="form-select" aria-label="Default select example" name="danh_muc_id" >
-                                                        <option selected>Chọn Danh Mục</option>
-                                                        <option value="22">Quần áo bóng đá</option>
-                                                        <option value="23"> giày</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Giá sản phẩm</label>
-                                                    <input type="number" class="form-control" name="gia_san_pham" value="<?=$getSanPham['gia_san_pham'];?>" placeholder="Nhập giá Sản Phẩm">
-                                                    <?php if(isset($_SESSION['errors']['gia_san_pham'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['gia_san_pham'] ?></p>
+                                                    <label class="form-label">Email</label>
+                                                    <input type="email" class="form-control" name="email" value="<?=$getAdmin['email'] ?>" placeholder=" mời nhập Email">
+                                                    <?php if(isset($_SESSION['errors']['email'])): ?>
+                                                    <p class="text-danger"><?= $_SESSION['errors']['email'] ?></p>
                                                 <?php endif; ?>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label class="form-label">Giá Khuyến Mãi</label>
-                                                    <input type="number" class="form-control" name="gia_khuyen_mai" value="<?=$getSanPham['gia_khuyen_mai'];?>"  placeholder="Nhập giá khuyến Mãi">
+                                                    <label class="form-label">Số điện thoại</label>
+                                                    <input type="number" class="form-control" name="so_dien_thoai" value="<?=$getAdmin['so_dien_thoai']?>" placeholder="Nhập số điện thoại">
+                                                    <?php if(isset($_SESSION['errors']['so_dien_thoai'])): ?>
+                                                    <p class="text-danger"><?= $_SESSION['errors']['so_dien_thoai'] ?></p>
+                                                <?php endif; ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Giới tính</label>
+                                                    <select class="form-select" aria-label="Default select example"  name="gioi_tinh">
+                                                        <option selected>Giới tính</option>
+                                                        <option value="1" <?=$getAdmin['gioi_tinh'] ==1 ? 'selected' : ""?>>Nam</option>
+                                                        <option value="2" <?=$getAdmin['gioi_tinh'] ==2 ? 'selected' : ""?>>Nữ</option>
+                                                    </select>
+                                                    <?php if(isset($_SESSION['errors']['gioi_tinh'])): ?>
+                                                    <p class="text-danger"><?= $_SESSION['errors']['gioi_tinh'] ?></p>
+                                                <?php endif; ?>
+                                                </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label class="form-label">Số Lượng</label>
-                                                    <input type="number" class="form-control" name="so_luong" value="<?=$getSanPham['so_luong'];?>" placeholder="Nhập số lượng">
-                                                    <?php if(isset($_SESSION['errors']['so_luong'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['so_luong'] ?></p>
+                                                    <label class="form-label">Địa chỉ</label>
+                                                    <input type="text" class="form-control" name="dia_chi" value="<?= $getAdmin['dia_chi'];?>" placeholder="Nhập địa chỉ ">
+                                                    <?php if(isset($_SESSION['errors']['dia_chi'])): ?>
+                                                    <p class="text-danger"><?= $_SESSION['errors']['dia_chi'] ?></p>
                                                 <?php endif; ?>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label class="form-label">Ngày Nhập</label>
-                                                    <input type="date" class="form-control" name="ngay_nhap" value="<?=$getSanPham['ngay_nhap'];?>" placeholder="Ngày nhập">
-                                                    <?php if(isset($_SESSION['errors']['ngay_nhap'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['ngay_nhap'] ?></p>
+                                                    <label class="form-label">Mật khẩu </label>
+                                                    <input type="text" class="form-control" name="mat_khau" value="<?=$getAdmin['mat_khau'] ?>" placeholder="Mời nhập mật khẩu">
+                                                    <?php if(isset($_SESSION['errors']['mau_khau'])): ?>
+                                                    <p class="text-danger"><?= $_SESSION['errors']['mat_khau'] ?></p>
                                                 <?php endif; ?>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label class="form-label">Trạng Thái</label>
-                                                    <select class="form-select" aria-label="Default select example" name="trang_thai">
-                                                        <option selected>Trạng Thái</option>
-                                                        <option value="1" <?=$getSanPham['trang_thai'] ==1 ? 'selected' : ""?>>Còn Hàng</option>
-                                                        <option value="2"><?=$getSanPham['trang_thai'] ==2 ? 'selected' : ""?>>Hết hàng</option>
-                                                    </select>
-                                                    <?php if(isset($_SESSION['errors']['trang_thai'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['trang_thai'] ?></p>
-                                                <?php endif; ?>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <!-- File Upload Section (Single image) -->
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Thêm Ảnh</label>
+                                                    <label class="form-label">Ảnh đại diện</label>
                                                     <div class="input-group">
-                                                    <img src="./images/category<?= $getSanPham['hinh_anh']; ?>" width="100">
-                                                    <input type="hidden" name="old_hinh_anh" value="<?=$getSanPham['ngay_nhap'];?>">
-                                                    <input class="form-control" name="hinh_anh" type="file" id="hinh_anh">
-                                                    <button class="btn btn-outline-secondary">Chọn ảnh</button>
+                                                    <input type="hidden" name="old_hinh_anh" value="<?=$getAdmin['anh_dai_dien'];?>">
+                                                    <input class="form-control" name="anh_dai_dien" type="file" id="hinh_anh">
+                                                    <button class="btn btn-outline-secondary">Rest Ảnh</button>
+                                                    <?php if(isset($_SESSION['errors']['anh_dai_dien'])): ?>
+                                                    <p class="text-danger"><?= $_SESSION['errors']['anh_dai-dien'] ?></p>
+                                                <?php endif; ?>
                                                     </div>
-                                                   
                                                     </div>
                                                 </div>             
                                             </div>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Mô tả</label>
-                                                        <textarea class="form-control" name="mo_ta" value="<?=$getSanPham['mo_ta'];?>" placeholder="Nhập mô tả" rows="4"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                           
                                         </div>
                                         <!-- end row -->
                                     </div>
@@ -138,8 +124,8 @@
                         </div>
                         <!-- end card -->
                         <div class="text-end mb-3">
-                            <a href="index.php?act=san-pham"class="btn btn-primary w-sm">Quay lại</a>
-                            <button type="submit" name="edit-san-pham" class="btn btn-secondary w-sm">Cập nhật</button>
+                            <a href="index.php?act=list-admin"class="btn btn-primary w-sm">Quay lại</a>
+                            <button type="submit" name="edit-admin" class="btn btn-secondary w-sm">Update thông tin admin</button>
                         </div>
                     </div>
                    
