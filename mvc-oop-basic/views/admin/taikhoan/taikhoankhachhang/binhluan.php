@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Danh sách Khách Hàng</h4>
+                        <h4 class="mb-sm-0">Danh sách bình luận của  Khách Hàng</h4>
                     </div>
                 </div>
             </div>
@@ -41,48 +41,35 @@
                                                             <table class="table table-hover table-striped align-middle table-nowrap mb-0">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th scope="col">Id</th>
-                                                                        <th scope="col">Họ và tên </th>
-                                                                        <th scope="col">Ảnh Đại Diện </th>
-                                                                        <th scope="col">Ngày sinh</th>
-                                                                        <th scope="col">Số Điện thoại</th>
-                                                                        <th scope="col">Giới tính</th>
-                                                                        <th scope="col">Địa chỉ</th>
-                                                                        <th scope="col">Chức vụ</th>
-                                                                        <th scope="col">Trạng thái</th>
-                                                                        <th scope="col">Thao tác</th>
+                                                                        <th scope="col">STT</th>
+                                                                        <th scope="col">Sản Phẩm </th>
+                                                                        <th scope="col">Tài Khoản </th>
+                                                                        <th scope="col">Nội dung</th>
+                                                                        <th scope="col">Ngày Đăng</th>
+                                                                        <th scope="col">Trạng Thái</th>
+                                                                        
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                 <tbody>
-                                                                    <?php foreach ($listAdmin as $key => $ad): ?>
+                                                                    <?php foreach ($listBinhLuan as $key => $bl): ?>
                                                                         <tr>
                                                                             <td><?= $key+1; ?></td>
-                                                                            <td><?= $ad['ho_ten']; ?></td>
+                                                                           
                                                                             <td>
-                                                                                <img src="./images/avataradmin<?= $ad['anh_dai_dien']; ?>"
-                                                                                    width="100">
+                                                                            <a target="_blank" href="index.php?act=chi-tiet-san-pham&id_san_pham=<?php echo $bl['san_pham_id']; ?>">
+                                                                            <?= $bl['ten_san_pham']; ?>
                                                                             </td>
-                                                                            <td><?= $ad['ngay_sinh']; ?></td>
-                                                                            <td><?= $ad['so_dien_thoai']; ?></td>
-                                                                            <td><?= $ad['gioi_tinh'] == 0 ? 'Nữ' : 'Nam'; ?></td>
-                                                                            <td><?= $ad['dia_chi']; ?></td>
-                                                                            <td><?= $ad['chuc_vu_id'] == 1 ? 'Admin' : 'Khách Hàng'; ?></td>
-                                                                            <td><?= $ad['trang_thai'] == 1 ? 'Đang hoạt động' : 'Bị cấm'; ?></td>
+                                                                            <td><?= $bl['tai_khoan_id']; ?></td>
+                                                                            <td><?= $bl['noi_dung']; ?></td>
+                                                                            <td><?= $bl['ngay_dang']; ?></td>
+                                                                            <td><?= $bl['trang_thai'] == 1 ? 'Hiện' : 'Ẩn'; ?></td>
                                                                             <td>
-                                                                            <a href="index.php?act=binh-luan&id=<?= $ad['id']; ?>"
-                                                                                        class="btn btn-primary">
-                                                                                        <i class="ri-settings-fill"></i>
-                                                                            </td>
-                                                                            
-                                                                            <td>
-                                                                            
-
                                                                                 <div class="form-check form-switch">
-                                                                                    <form action="index.php?act=cam-admin" method="post" style="display:inline;">
-                                                                                        <input type="hidden" name="id" value="<?= $ad['id']; ?>">
-                                                                                        <input type="hidden" name="trang_thai" value="<?= $ad['trang_thai'] == 1 ? 2 : 1; ?>">
-                                                                                        <button type="submit" name="cam-admin" class="btn <?= $ad['trang_thai'] == 1 ?  'btn-success' : 'btn-danger' ; ?>">
+                                                                                    <form action="index.php?act=cam-binh-luan" method="post" style="display:inline;">
+                                                                                        <input type="hidden" name="id" value="<?= $bl['id']; ?>">
+                                                                                        <input type="hidden" name="trang_thai" value="<?= $bl['trang_thai'] == 1 ? 2 : 1; ?>">
+                                                                                        <button type="submit" name="binh-luan" class="btn <?= $bl['trang_thai'] == 1 ?  'btn-success' : 'btn-danger' ; ?>">
                                                                                             <?= $ad['trang_thai'] == 1 ?   ' <i class="ri-lock-unlock-line"></i>' : '<i class="ri-forbid-2-line"></i>'; ?>
                                                                                         </button>
                                                                                     </form>

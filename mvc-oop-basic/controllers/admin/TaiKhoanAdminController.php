@@ -161,9 +161,32 @@ public function createAddmin()
          }
       }
    }
-   public function khachhang()
+   public function danhSachBinhLuan($id){
+      $listBinhLuan  = $this->getAllBinhLuan($id);
+      include '../views/admin/taikhoan/taikhoankhachhang/binhluan.php';
+   }
+   public function  quyenBinhluan($id, $trang_thai)
    {
-      $listAdmin = $this->listTaiKhoanKhach();
-      include '../views/admin/taikhoan/taikhoankhachhang/list.php';
+      if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['binh-luan'])) {
+
+         $id = $_POST['id'];
+         $trang_thai = $_POST['trang_thai'];
+         if ($id && $trang_thai !== null) {
+            // var_dump($this);die;
+            $camAdmin = $this->updateQuyenBinhLuan($id, $trang_thai);
+
+            if ($camAdmin) {
+               $_SESSION['success'] = 'Cập nhật trạng thái thành công!';
+            } else {
+               $_SESSION['errors'] = 'Cập nhật trạng thái thất bại!';
+            }
+            header('Location: index.php?act=binh-luan');
+            exit();
+         } else {
+            $_SESSION['errors'] = 'Dữ liệu không hợp lệ!';
+            header('Location: index.php?act=binh-luan');
+            exit();
+         }
+      }
    }
 }

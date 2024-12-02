@@ -38,6 +38,12 @@ require_once '../Connect/connect.php';
     $stmt->execute();
     return $stmt->fetchAll();
   }
-   
+  public function detailsBinhLuan($id)
+   {
+    $sql = 'SELECT * FROM binh_luans WHERE id = ?';
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC); 
+   }
    }
 ?>

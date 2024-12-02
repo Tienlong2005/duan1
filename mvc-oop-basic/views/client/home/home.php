@@ -52,10 +52,10 @@
                     <?php foreach ($showSanPhamClient as $sp): ?>
                         <div class="single_product">
                             <div class="product_name">
-                                <h3><a href="?act=detail-pro"><?= $sp['ten_san_pham'] ?></a></h3>
+                            <h3><a href="?act=chi-tiet-san-pham&san_pham_id=<?= $sp['id'] ?>"><?= $sp['ten_san_pham'] ?></a></h3>
                             </div>
                             <div class="product_thumb">
-                                <a class="primary_img" href="?act=detail-pro">
+                                <a class="primary_img" href="?act=chi-tiet-san-pham&san_pham_id=<?= $sp['id'] ?>">
                                     <img src="./images/category<?= $sp['hinh_anh']; ?>" width="100"></td>
                                 </a>
                             </div>

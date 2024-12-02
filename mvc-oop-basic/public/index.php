@@ -132,11 +132,21 @@ switch ($action) {
     case 'dang-xuat':
         $AuthClient->logout();
     case 'chi-tiet-san-pham':
+            if (isset($_GET['san_pham_id'])) {
+                $id = $_GET['san_pham_id'];
+                $SanPhamClient->getDetailSanPhamClient($id);
+            } else {
+                echo "Sản phẩm không tồn tại.";
+            }
+            break;
         include '../views/client/product/detail.php';
         break;
 
     case 'tai-khoan-ca-nhan':
         include '../views/client/profile/profile.php';
+        break;
+    case 'update-ca-nhan':
+        $Profile->updateProfie();
         break;
     case 'cart':
         $GioHang->index();
@@ -161,5 +171,20 @@ switch ($action) {
     case 'payment-processing':
         $GioHang->postCheckOut();
         break;
-    default:
-}
+        case ' cam-binh-luan':
+            $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
+            $trang_thai = isset($_POST['trang_thai']) ? (int)$_POST['trang_thai'] : null;
+    
+            if ($id && in_array($trang_thai, [1, 2])) {
+                $TaikhoanAdmin->quyenBinhluan($id, $trang_thai);
+                $_SESSION['success'] = 'Cập nhật trạng thái thành công!';
+            } else {
+                $_SESSION['errors'] = 'ID hoặc trạng thái không hợp lệ';
+            }
+            header('Location: index.php?act=binh-luan');
+            exit();
+            break;
+            case 'binh-luan':
+                $TaikhoanAdmin->danhSachBinhLuan($id);
+                break;
+        }
