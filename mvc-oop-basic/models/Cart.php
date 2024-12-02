@@ -54,8 +54,7 @@ class Cart extends connect
         try {
             $sql = 'INSERT INTO gio_hangs (tai_khoan_id) VALUES (?)';
             $stmt = $this->connect()->prepare($sql);
-            $stmt->execute([$id]);
-            return $this->connect()->lastInsertId();
+            return $stmt->execute([$id]);
         } catch (Exception $e) {
             echo "Lỗi" . $e->getMessage();
         }
@@ -76,7 +75,6 @@ class Cart extends connect
             return false;
         }
     }
-
 
     // Thêm sản phẩm vào chi tiết giỏ hàng
     public function addDetailGioHang($gio_hang_id, $san_pham_id, $so_luong)
@@ -110,7 +108,7 @@ class Cart extends connect
             $sql = 'INSERT INTO don_hangs (ma_don_hang, tai_khoan_id, ten_nguoi_nhan, email_nguoi_nhan, sdt_nguoi_nhan, dia_chi_nguoi_nhan, ngay_dat, tong_tien, ghi_chu, phuong_thuc_thanh_toan_id, trang_thai_id) 
                     VALUES (?,?,?,?,?,?,?,?,?,?,?)';
             $stmt = $this->connect()->prepare($sql);
-            $stmt->execute([
+            return $stmt->execute([
                 $ma_don_hang,
                 $tai_khoan_id,
                 $ten_nguoi_nhan,
@@ -123,9 +121,58 @@ class Cart extends connect
                 $phuong_thuc_thanh_toan_id,
                 $trang_thai_id
             ]);
-            return $this->connect()->lastInsertId();
         } catch (Exception $e) {
             echo "Lỗi: " . $e->getMessage();
+            return true;
         }
     }
+
+    public function deleteGioHang($gio_hang_id)
+    {
+        try {
+            $sql = 'DELETE FROM chi_tiet_gio_hangs WHERE gio_hang_id = ?';
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$gio_hang_id]);
+            return true;
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public function listHisDonHang($tai_khoan_id)
+    {
+        try {
+            $sql = 'SELECT * FROM don_hangs WHERE tai_khoan_id= ?';
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$tai_khoan_id]);
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo "Lỗi" . $e->getMessage();
+        }
+    }
+    // public function listHisDonHang($id)
+    // {
+    //     try {
+    //         $sql = 'SELECT 
+    //                 don_hangs.id AS don_hang_id,
+    //                 don_hangs.tai_khoan_id,
+    //                 tai_khoans.ho_ten,
+    //                 trang_thai_don_hangs.ten_trang_thai,
+    //                 chi_tiet_don_hangs.so_luong
+    //             FROM don_hangs
+    //             JOIN trang_thai_don_hangs ON don_hangs.trang_thai_id = trang_thai_don_hangs.id
+    //             JOIN chi_tiet_don_hangs ON don_hangs.id = chi_tiet_don_hangs.don_hang_id
+    //             JOIN tai_khoans ON don_hangs.tai_khoan_id = tai_khoans.id
+    //             WHERE don_hangs.tai_khoan_id = ?';
+
+    //         $stmt = $this->connect()->prepare($sql);
+    //         $stmt->execute([$id]);
+    //         return $stmt->fetchAll();
+    //     } catch (Exception $e) {
+    //         echo "Lỗi: " . $e->getMessage();
+    //     }
+    // }
+
+    
 }

@@ -20,6 +20,7 @@ class CartController extends Cart
         } else {
             header('Location: index.php?act=signin');
         }
+        // echo json_encode($chiTietGioHang);die;
         include '../views/client/cart/cart.php';
     }
 
@@ -83,6 +84,13 @@ class CartController extends Cart
             exit();
         }
     }
+    public function updateCartAjax()
+    {
+
+        foreach ($_POST['data_update'] as $value) {
+            $this->updateSoLuong($_POST['gio_hang_id'], $value['id'], $value['so_luong']);
+        }
+    }
 
     // Xóa sản phẩm khỏi giỏ hàng
     public function deleteCartItem()
@@ -118,7 +126,7 @@ class CartController extends Cart
             }
             include '../views/client/cart/checkOut.php';
         } else {
-            header('Location: index.php?act=signin');
+            header('Location: index.php?act=dang-nhap');
         }
     }
 
@@ -137,6 +145,7 @@ class CartController extends Cart
             $ngay_dat = date('Y-m-d');
             $trang_thai_id = 1;
 
+
             $ma_don_hang = 'GB-' . rand(1000, 9999);
 
             $user = $this->getTaiKhoanFromEmail($_SESSION['user']['email']);
@@ -145,12 +154,30 @@ class CartController extends Cart
             $check = $this->addDonHang($tai_khoan_id, $ten_nguoi_nhan, $email_nguoi_nhan, $sdt_nguoi_nhan, $dia_chi_nguoi_nhan, $ghi_chu, $tong_tien, $phuong_thuc_thanh_toan_id, $ngay_dat, $ma_don_hang, $trang_thai_id);
             if ($check) {
                 $_SESSION['success'] = 'Mua Hàng Thành Công';
-                header('Location: index.php?act=/');
+                if (isset($_SESSION['user'])) {
+                    $mail = $_SESSION['user'];
+                    $gioHang = $this->getGioHangFromUser($mail['id']);
+                    $gioHangid = $gioHang['id'];
+                    $deleteGioHang = $this->deleteGioHang($gioHang['id']);
+                }
+                header('Location: index.php');
                 exit;
             } else {
                 $_SESSION['error'] = 'Thanh Toán Thất Bại';
                 header('Location:' . $_SERVER['HTTP_REFERER']);
             }
+        }
+    }
+
+    public function getListHisDonHang()
+    {
+        $id = $_SESSION['user']['id'];
+        try {
+            $listAllDonHang = $this->listHisDonHang($id);
+            include '../views/client/profile/profile.php';
+        } catch (Exception $e) {
+            // Xử lý lỗi nếu có
+            echo "Lỗi: " . $e->getMessage();
         }
     }
 }

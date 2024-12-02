@@ -4,7 +4,6 @@ if (empty($_SESSION['user'])) {
     exit;
 };
 ?>
-
 <div class="checkout-section mt-5">
     <div class="container">
         <h2 class="section-title text-center mb-4">Thanh Toán</h2>
