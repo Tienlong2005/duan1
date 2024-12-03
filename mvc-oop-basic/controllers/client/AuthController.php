@@ -86,4 +86,38 @@ class AuthController extends Auth
         header("Location: ?act=trang-chu");
         exit();
     }
+    public function updatePassword()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $tai_khoan_id = $_SESSION['user']['id'];
+            $currentPassword = $_POST['current-password'];
+            $newPassword = $_POST['new-password'];
+            $confirmPassword = $_POST['confirm-password'];
+
+            if ($newPassword !== $confirmPassword) {
+                $_SESSION['error'] = 'Mật khẩu mới và mật khẩu xác nhận không khớp!';
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
+                exit;
+            }
+
+            $user = $this->getUserById($tai_khoan_id);
+            if ($user && password_verify($currentPassword, $user['mat_khau'])) {
+
+                $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+                $status = $this->changePassword($tai_khoan_id, $hashedPassword);
+
+                if ($status) {
+                    $_SESSION['success'] = 'Mật khẩu đã được thay đổi thành công';
+                } else {
+                    $_SESSION['error'] = 'Có lỗi xảy ra, vui lòng thử lại sau!';
+                }
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
+            } else {
+                $_SESSION['error'] = 'Mật khẩu cũ không đúng!';
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
+            }
+            exit;
+        }
+    }
 }

@@ -22,4 +22,27 @@ class Auth extends connect
         }
         return false;
     }
+    public function getUserById($id)
+    {
+        try {
+            $sql = "SELECT * FROM tai_khoans WHERE id = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$id]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+        }
+    }
+
+    public function changePassword($id, $mat_khau)
+    {
+        try {
+            $sql = "UPDATE tai_khoans SET mat_khau = ? WHERE id = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$mat_khau, $id]);
+            return true;
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+        }
+    }
 }

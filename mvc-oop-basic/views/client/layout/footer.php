@@ -1,3 +1,4 @@
+<hr>
 <footer class="footer_widgets">
     <div class="container">
         <div class="footer_top">
@@ -116,7 +117,40 @@
 
 </body>
 
+<?php
+// Kiểm tra nếu session có thông báo thành công
+if (isset($_SESSION['success'])) {
+    echo "<script>
+                    Toastify({
+                        text: '{$_SESSION['success']}',
+                        style: {
+                            background: 'rgba(0, 128, 0, 0.7)', 
+                            fontSize: '18px', 
+                            width: '250px', 
+                            height: '60px',  
+                        },
+                        duration: 3000
+                    }).showToast();
+                </script>";
+    unset($_SESSION['success']);
+}
 
+if (isset($_SESSION['errors'])) {
+    echo "<script>
+                    Toastify({
+                        text: '{$_SESSION['errors']}',
+                        style: {
+                            background: 'rgba(255, 0, 0, 0.7)',
+                            fontSize: '18px',
+                            width: '250px', 
+                            height: '60px',  
+                        },
+                        duration: 3000
+                    }).showToast();
+                </script>";
+    unset($_SESSION['errors']);
+}
+?>
 <!-- Mirrored from htmldemo.net/autima/autima/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Nov 2024 09:08:19 GMT -->
 
 </html>

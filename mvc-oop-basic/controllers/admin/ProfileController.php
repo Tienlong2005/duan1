@@ -4,7 +4,7 @@ class ProfileController extends Taikhoan
 {
     public function updateProfie()
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update-profile'])) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // echo '<pre>';
             // print_r($_SESSION['user']);
             // echo '<pre>';
@@ -20,6 +20,7 @@ class ProfileController extends Taikhoan
                 header('Location:' . $_SERVER['HTTP_REFERER']);
                 exit();
             }
+            // var_dump($_POST);
 
             $user = $this->updateUser($_POST['ho_ten'], $_POST['email'], $_POST['sdt'], $_POST['gioi_tinh'], $_POST['dia_chi']);
             if ($user) {

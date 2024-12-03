@@ -8,7 +8,8 @@ require_once '../controllers/client/AuthController.php';
 require_once '../controllers/admin/ProfileController.php';
 require_once '../controllers/client/SanPhamController.php';
 require_once '../controllers/client/CartController.php';
-$action = isset($_GET['act']) ? $_GET['act'] : '';
+require_once '../controllers/admin/AuthControllerAdmin.php';
+$action = isset($_GET['act']) ? $_GET['act'] : 'trang-chu';
 $DanhmucAdmin = new DanhMucAdminController();
 $SanphamAdmin = new SanPhamAdminController();
 $TaikhoanAdmin = new TaiKhoanAdminController();
@@ -17,10 +18,23 @@ $AuthClient = new AuthController();
 $Profile = new ProfileController();
 $SanPhamClient = new SanPhamController();
 $GioHang = new CartController();
+$AuthAmin = new AuthControllerAdmin();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
         break;
+    case "login":
+        $AuthAmin->logins();
+        break;
+
+    case 'admin-user':
+        include '../views/admin/profie/info.php';
+        break;
+
+    case 'logout-admin':
+        $AuthAmin->logoutAdmin();
+        break;
+
     case 'san-pham':
         $SanphamAdmin->index();
         break;
@@ -132,16 +146,28 @@ switch ($action) {
     case 'dang-xuat':
         $AuthClient->logout();
     case 'chi-tiet-san-pham':
+        if (isset($_GET['san_pham_id'])) {
+            $id = $_GET['san_pham_id'];
+            $SanPhamClient->getDetailSanPhamClient($id);
+        } else {
+            echo "Sản phẩm không tồn tại.";
+        }
+        break;
         include '../views/client/product/detail.php';
         break;
 
     case 'tai-khoan-ca-nhan':
         include '../views/client/profile/profile.php';
         break;
+    case 'update-ca-nhan':
+        $Profile->updateProfie();
+        break;
     case 'cart':
         $GioHang->index();
         break;
-
+    case 'update-cart-ajax':
+        $GioHang->updateCartAjax();
+        break;
     case 'addToCart':
         $GioHang->addToCart();
         break;
@@ -158,8 +184,32 @@ switch ($action) {
         $GioHang->checkOut();
         break;
 
+    case 'change-password':
+        $AuthClient->updatePassword();
+        break;
+
+    case 'check-out':
+        $GioHang->checkOut();
+        break;
+
     case 'payment-processing':
         $GioHang->postCheckOut();
         break;
-    default:
+    case ' cam-binh-luan':
+        $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
+        $trang_thai = isset($_POST['trang_thai']) ? (int)$_POST['trang_thai'] : null;
+
+        if ($id && in_array($trang_thai, [1, 2])) {
+            $TaikhoanAdmin->quyenBinhluan($id, $trang_thai);
+            $_SESSION['success'] = 'Cập nhật trạng thái thành công!';
+        } else {
+            $_SESSION['errors'] = 'ID hoặc trạng thái không hợp lệ';
+        }
+        header('Location: index.php?act=binh-luan');
+        exit();
+        break;
+
+    case 'binh-luan':
+        $TaikhoanAdmin->danhSachBinhLuan($id);
+        break;
 }

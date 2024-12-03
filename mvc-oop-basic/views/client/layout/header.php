@@ -41,6 +41,9 @@
 
     <!--modernizr min js here-->
     <script src="client/assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 </head>
 
@@ -67,10 +70,10 @@
                                             </a>
                                             <ul class="dropdown_links">
                                                 <li><a href="?act=check-out">Thanh Toán</a></li>
-                                                <li><a href="?act=profiles">Tài Khoản</a></li>
+                                                <li><a href="?act=tai-khoan-ca-nhan">Tài Khoản</a></li>
                                                 <li><a href="?act=cart">Giỏ Hàng</a></li>
                                                 <li>
-                                                    <form action="?act=logout" method="post">
+                                                    <form action="?act=dang-xuat" method="post">
                                                         <button type="submit" class="btn btn-danger btn-sm">Logout</button>
                                                     </form>
                                                 </li>
@@ -79,12 +82,12 @@
                                     <?php else: ?>
                                         <!-- User is not logged in -->
                                         <li class="top_links">
-                                            <a href="?act=signin">
+                                            <a href="?act=dang-nhap">
                                                 <i class="ion-android-person"></i> Đăng Nhập
                                             </a>
                                         </li>
                                         <li class="top_links">
-                                            <a href="?act=register">
+                                            <a href="?act=dang-ky">
                                                 <i class="ion-android-person"></i> Đăng Ký
                                             </a>
                                         </li>
@@ -102,7 +105,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-3 col-md-6">
                         <div class="logo">
-                            <a href="index.php?act=/"><img src="client/assets/img/logo/logo.png" alt=""></a>
+                            <a href="index.php?act=/"><img src="client/assets/img/logo/g1.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
